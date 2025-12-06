@@ -16,7 +16,9 @@ RUN pip install poetry
 RUN poetry install --no-root
 
 # copy application
-COPY . .
+COPY app app
 
-RUN chmod +x /app/scripts/entrypoint.sh
-ENTRYPOINT ["/app/scripts/entrypoint.sh"]
+# copy and run entrypoint script
+COPY /scripts/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
