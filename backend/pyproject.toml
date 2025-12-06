@@ -9,6 +9,8 @@ readme = "README.md"
 python = "^3.12"
 fastapi = "^0.123.10"
 uvicorn = "^0.38.0"
+neo4j = "^6.0.3"
+python-dotenv = "^1.2.1"
 
 
 [build-system]
