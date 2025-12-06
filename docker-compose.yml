@@ -1,0 +1,9 @@
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+    volumes:
+      - ./backend/app:/app/app
+    ports:
+      - "8005:8005"
