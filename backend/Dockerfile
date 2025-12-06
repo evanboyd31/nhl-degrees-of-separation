@@ -19,6 +19,6 @@ RUN poetry install --no-root
 COPY app app
 
 # copy and run entrypoint script
-COPY /scripts/entrypoint.sh /entrypoint.sh
+COPY /scripts/bash/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
