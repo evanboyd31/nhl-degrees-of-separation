@@ -20,12 +20,20 @@ def get_teams() -> list:
   return teams
 
 def main() -> None:
+  """
+  The main function calls the get_teams() function, and then creates a Team
+  node in the Neo4j database for each team
+  """
+
+  # get a list of Team JSONs from the NHL API
   teams = get_teams()
   
+  # define a single driver to be used in the loop below for creating teams
   driver = GraphDatabase.driver(uri=URI, 
                                 auth=AUTH)
   
   # use a merge query so that we don't create a bunch of duplicated teams in the event that we need to rerun
+  # also define the string outside the loop for efficiency
   create_team_query = """
   MERGE (t:Team {id: $team_id})
   SET t.full_name = $team_full_name,
@@ -33,6 +41,7 @@ def main() -> None:
   """
 
   for team in teams:
+    # a team is identified by its id, full name, and tricode (e.g., MTL)
     team_id = team.get("id")
     team_full_name = team.get("fullName")
     team_tricode = team.get("triCode")
@@ -45,6 +54,7 @@ def main() -> None:
       
       print(f"Inserted ${team_full_name} (ID: ${team_id}, tricode: ${team_tricode})")
 
+  # always make sure to close the driver!
   driver.close()
 
 if __name__ == "__main__":
