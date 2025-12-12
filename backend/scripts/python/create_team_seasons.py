@@ -16,23 +16,27 @@ driver = GraphDatabase.driver(uri=URI,
 TEAM_SEASONS_BASE_API_URL = "https://api-web.nhle.com/v1/roster-season/"
 TEAM_SCHEDULE_BASE_API_URL = "https://api-web.nhle.com/v1/club-schedule-season/"
 
-def get_teams_tricodes() -> list:
+def get_teams() -> list[str]:
   """
-  The get_teams_tricodes function returns a list of the 3 letter tricodes of all historical NHL teams (e.g., ["MTL", "VAN", ...])
+  The get_teams function returns a list of all NHL teams in the Neo4j DB
+  
+  :return: List of teams (e.g., [{"id": 1, "full_name": "Montreal Canadiens", "tricode": "MTL"}])
+  :rtype: list[str]
   """
 
-  get_team_abbreviations_query = """
+  get_teams_query = """
   MATCH (t:Team)
-  RETURN t.tricode
+  RETURN t.id as id, t.full_name as full_name, t.tricode as tricode
   """
 
   with driver.session() as session:
-    result = session.run(get_team_abbreviations_query)
-    return [record.value() for record in result]
+    result = session.run(get_teams_query)
+    return [{ "id": record["id"], "full_name": record["full_name"], "tricode": record["tricode"] } for record in result]
 
 def main() -> None:
+  teams = get_teams()
+  print(teams)
 
-  print(get_teams_tricodes())
 
 if __name__ == "__main__":
   main()
