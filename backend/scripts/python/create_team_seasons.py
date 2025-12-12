@@ -45,12 +45,46 @@ def get_team_seasons(tricode: str) -> list[int]:
   team_seasons = httpx.get(f"{TEAM_SEASONS_BASE_API_URL}{tricode}").json()
   return team_seasons
 
+def get_team_season_logo_url(tricode: str, season: int):
+  """
+  Given a team and a season, get the team's logo for that season
+  
+  :param tricode: Tricode for the NHL team (e.g., "MTL")
+  :type tricode: str
+  :param season: Season id (e.g., 20252026)
+  :type season: int
+  """
+
+  # fetch the games for the team's season
+  team_schedule_for_seasons = httpx.get(f"{TEAM_SCHEDULE_BASE_API_URL}{tricode}/{season}").json()
+  games = team_schedule_for_seasons.get("games", [])
+
+  if len(games) > 0:
+    # get the first game of the year
+    first_game = games[0]
+
+    # check to see if the provided team was the home or away team to get correct logo
+    home_team = first_game.get("homeTeam", {})
+    away_team = first_game.get("awayTeam", {})
+
+    logo_url = ""
+    if home_team.get("abbrev", "") == tricode:
+      logo_url = home_team.get("logo", "")
+    else:
+      logo_url = away_team.get("logo", "")
+
+    return logo_url
+
 def main() -> None:
   teams = get_teams()
   
   team = teams[0]
 
   team_seasons = get_team_seasons(team.get("tricode"))
+
+  team_season = team_seasons[0]
+
+  logo_url = get_team_season_logo_url(team.get("tricode"), team_season)
 
 
 if __name__ == "__main__":
