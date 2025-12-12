@@ -33,9 +33,24 @@ def get_teams() -> list[str]:
     result = session.run(get_teams_query)
     return [{ "id": record["id"], "full_name": record["full_name"], "tricode": record["tricode"] } for record in result]
 
+def get_team_seasons(tricode: str) -> list[int]:
+  """
+  Given a team's tricode, get the seasons that the team played in
+  
+  :param tricode: tricode for an NHL team (unique)
+  :type tricode: str
+  :return: list of season IDs that the team played in (e.g., [19191920, 19201921, ..., 20252026])
+  :rtype: list[int]
+  """
+  team_seasons = httpx.get(f"{TEAM_SEASONS_BASE_API_URL}{tricode}").json()
+  return team_seasons
+
 def main() -> None:
   teams = get_teams()
-  print(teams)
+  
+  team = teams[0]
+
+  team_seasons = get_team_seasons(team.get("tricode"))
 
 
 if __name__ == "__main__":
