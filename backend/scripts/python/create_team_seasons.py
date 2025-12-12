@@ -100,7 +100,7 @@ def main() -> None:
   
   # for each team
   with driver.session() as session:
-    for team in teams[:1]:
+    for team in teams:
 
       # get the seasons they played in
       team_id = team.get("id")
