@@ -45,7 +45,7 @@ def get_team_seasons(tricode: str) -> list[int]:
   team_seasons = httpx.get(f"{TEAM_SEASONS_BASE_API_URL}{tricode}").json()
   return team_seasons
 
-def get_team_season_logo_url(tricode: str, season: int):
+def get_team_season_logo_url(tricode: str, season: int) -> str:
   """
   Given a team and a season, get the team's logo for that season
   
@@ -74,17 +74,62 @@ def get_team_season_logo_url(tricode: str, season: int):
       logo_url = away_team.get("logo", "")
 
     return logo_url
+  
+def format_team_season_full_name(team_full_name: str, season: int) -> str:
+  """
+  The format_team_season_full_name provides the uniform format for TeamSeason full_name fields (e.g., "Montreal Canadiens (2025-2026)")
+  
+  :param team_full_name: Full name of the NHL team (e.g., "Montreal Canadiens")
+  :type team_full_name: str
+  :param season: Season id (e.g., 20252026)
+  :type season: int
+  :return: Formatted TeamSeason full_name (e.g., "Montreal Canadiens (2025-2026)")
+  :rtype: str
+  """
+  return f"{team_full_name} ({str(season)[:4]}-{str(season)[4:]})"
 
 def main() -> None:
   teams = get_teams()
+
+  create_team_season_query = """
+  MATCH (t: Team {id: $team_id})
+  MERGE (ts: TeamSeason {id: $team_season_id})-[:SEASON_FOR]->(t)
+  ON CREATE SET ts.full_name = $full_name,
+                ts.logo_url = $logo_url
+  """
   
-  team = teams[0]
+  # for each team
+  with driver.session() as session:
+    for team in teams[:1]:
 
-  team_seasons = get_team_seasons(team.get("tricode"))
+      # get the seasons they played in
+      team_id = team.get("id")
+      team_full_name = team.get("full_name")
+      tricode = team.get("tricode", "")
+      team_seasons = get_team_seasons(tricode=tricode)
+      
+      # for each season the team played in
+      with session.begin_transaction() as tx:
+        for season in team_seasons:
 
-  team_season = team_seasons[0]
+          # get their logo for that season and create a TeamSeason node in Neo4j DB
+          logo_url = get_team_season_logo_url(tricode=tricode, 
+                                              season=season)
 
-  logo_url = get_team_season_logo_url(team.get("tricode"), team_season)
+          # ids for TeamSeasons will be of the form team_id-season, e.g., 1-20252026
+          team_season_id = f"{team_id}-{season}"
+
+          # format the name of the TeamSeason
+          team_season_full_name = format_team_season_full_name(team_full_name=team_full_name,
+                                                               season=season)      
+          
+          tx.run(create_team_season_query,
+                 team_id=team_id,
+                 team_season_id=team_season_id,
+                 full_name=team_season_full_name,
+                 logo_url=logo_url)
+          
+          print(f"Inserted ${team_season_id} (season: {season}, logo_url: {logo_url})")
 
 
 if __name__ == "__main__":
