@@ -58,10 +58,26 @@ def get_local_played_for_relationships() -> list[dict]:
       rows.append(played_for_relationship)
 
     return rows
+  
+def chunked(iterable, size=2000):
+  """
+  The chunked function breaks a list into slices of size length
+  
+  :param iterable: a list to break into chunks
+  :param size: chunk size
+  """
+  it = iter(iterable)
+  while True:
+    batch = list(islice(it, size))
+    if not batch:
+      break
+    yield batch
 
 
 def main() -> None:
   played_for_relationships = get_local_played_for_relationships()
+
+
 
 if __name__ == "__main__":
   try:
