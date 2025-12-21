@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from app.core.neo4j import get_session
-from app.services.players_service import get_player_by_search_string
+from app.services.players_service import get_player_by_search_string, get_shortest_path
 
 router = APIRouter(prefix="/players")
 
@@ -15,3 +15,19 @@ def search_for_player(session = Depends(get_session), search_string: str = ""):
   """
   return get_player_by_search_string(session=session, 
                                      search_string=search_string)
+
+@router.get("/shortest-path/")
+def find_shortest_path_between_two_players(player_1_id: int, player_2_id: int, session = Depends(get_session)):
+  """
+  Docstring for find_shortest_path_between_two_players
+  
+  :param player_1_id: The NHL API id of the first player
+  :type player_1_id: int
+  :param player_2_id: The NHL API id of the second player
+  :type player_2_id: int
+  :param session: Neo4j DB Session dependency
+  """
+
+  return get_shortest_path(session=session,
+                           player_1_id=player_1_id,
+                           player_2_id=player_2_id)

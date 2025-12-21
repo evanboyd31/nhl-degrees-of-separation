@@ -22,3 +22,32 @@ def run_get_players_by_search_string(session: Session, search_string: str):
                        search_string=search_string)
   
   return [record.data().get("player") for record in result]
+
+
+def run_get_shortest_path_between_two_players(session: Session, player_1_id: int, player_2_id: int):
+  """
+  The run_get_shortest_path_between_two_players executes the shortest path query between two players
+  
+  :param session: Neo4j DB session
+  :type session: Session
+  :param player_1_id: The NHL API id of the first player
+  :type player_1_id: int
+  :param player_2_id: The NHL API id of the second player
+  :type player_2_id: int
+  """
+
+  shortest_path_query = """
+  MATCH (p1:Player {id: $player_1_id})
+  MATCH (p2:Player {id: $player_2_id})
+  MATCH path = shortestPath( (p1)-[:PLAYED_FOR*..30]-(p2) )
+  RETURN
+    length(path) AS hops,
+    [r IN relationships(path) | properties(r)] AS relationship_attrs,
+    [n IN nodes(path) | properties(n)] AS node_attrs
+  """
+
+  result = session.run(shortest_path_query,
+                       player_1_id=player_1_id,
+                       player_2_id=player_2_id)
+
+  return [record.data() for record in result]
