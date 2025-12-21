@@ -14,6 +14,9 @@ driver = GraphDatabase.driver(uri=URI,
                               auth=AUTH)
 
 TEAM_GAME_TYPES_BASE_API_URL = "https://api-web.nhle.com/v1/club-stats-season/"
+# team roster example: https://api-web.nhle.com/v1/club-stats/TOR/20242025/3
+TEAM_ROSTER_BASE_API_URL = "https://api-web.nhle.com/v1/club-stats/"
+
 
 def get_team_seasons() -> list[dict]:
   """
@@ -28,7 +31,7 @@ def get_team_seasons() -> list[dict]:
   MATCH (team_season:TeamSeason)-[:SEASON_FOR]->(team:Team)
   WHERE team.full_name CONTAINS "Canucks"
   RETURN team, team_season
-  ORDER BY team.tricode
+  ORDER BY team.tricode, team_season.id
   """
 
   with driver.session() as session:
@@ -71,6 +74,73 @@ def update_game_types(game_types: dict, tricode: str, game_types_for_seasons: li
     season_game_types = season_game_type.get("gameTypes")
     game_types[tricode][season_id] = season_game_types
 
+def create_players_for_team_season(tricode: str, team_season_id: str, season_id: int, game_types_for_season: list[int]) -> None:
+  """
+  The create_players_for_team_season function performs the following logic: given a team and a season, create Neo4j nodes
+  for each player on that team/season's roster
+  
+  :param tricode: tricode of the NHL team
+  :type tricode: str
+  :param team_season_id: TeamSeason node id in Neo4j (used for creating relationships, e.g., "1-20252026")
+  :type team_season_id: str
+  :param season_id: Season id of an NHL season (e.g., 20252026)
+  :type season_id: int
+  :param game_types_for_season: The game types that the team played in during the season (used for querying rosters, 2 = regular season, 3 = playoffs)
+  :type game_types_for_season: list[int]
+  """
+  create_player_query = """
+  MATCH (ts:TeamSeason {id: $team_season_id})
+  MERGE (p:Player {id: $player_id})
+  ON CREATE SET p.full_name = $full_name,
+                p.position_code = $position_code
+  MERGE (p)-[pf:PLAYED_FOR]->(ts)
+  ON CREATE SET pf.headshot_url = $headshot_url
+  ON MATCH  SET pf.headshot_url = $headshot_url
+  """
+
+  with driver.session() as session:
+    for game_type in game_types_for_season:
+      team_roster = httpx.get(f"{TEAM_ROSTER_BASE_API_URL}{tricode}/{season_id}/{game_type}").json()
+      
+      # get listers of skaters and goalies (position for goalies is "G", but is not provided in this endpoint)
+      skaters = team_roster.get("skaters", [])
+      goalies = team_roster.get("goalies", [])
+
+      with session.begin_transaction() as tx:
+
+        # create a Player node for each skater
+        for skater in skaters:
+          player_id = skater.get("playerId")
+          full_name = f"{skater.get("firstName", {}).get("default", "")} {skater.get("lastName", {}).get("default", "")}"
+          position_code = skater.get("positionCode", "")
+          headshot_url = skater.get("headshot", "")
+
+          tx.run(create_player_query,
+                 team_season_id=team_season_id,
+                 player_id=player_id,
+                 full_name=full_name,
+                 position_code=position_code,
+                 headshot_url=headshot_url)
+          
+          print(f"Inserted/updated player {player_id} ({full_name}) for {tricode} {season_id}")
+
+        # create a Player node for each goalie
+        for goalie in goalies:
+          player_id = goalie.get("playerId")
+          full_name = f"{goalie.get("firstName", {}).get("default", "")} {goalie.get("lastName", {}).get("default", "")}"
+          position_code = "G"
+          headshot_url = goalie.get("headshot", "")
+
+          tx.run(create_player_query,
+                 team_season_id=team_season_id,
+                 player_id=player_id,
+                 full_name=full_name,
+                 position_code=position_code,
+                 headshot_url=headshot_url)
+          
+          print(f"Inserted/updated goalie {player_id} ({full_name}) for {tricode} {season_id}")
+
+
 def main() -> None:
   seasons = get_team_seasons()
 
@@ -81,8 +151,10 @@ def main() -> None:
     team = season.get("team")
     team_season = season.get("team_season")
 
-    tricode = team.get("tricode")
-    season_id = team_season.get("id")[2:]
+    tricode = team.get("tricode", "")
+    team_season_id = team_season.get("id", "")
+    # TeamSeason ids are of the form {team_id}-{season_id}
+    season_id = int(team_season_id.split("-", 1)[1])
 
     # update the game type caching dictionary if necessary
     if game_types.get(tricode, None) is None:
@@ -93,7 +165,11 @@ def main() -> None:
       
     game_types_for_season = game_types.get(tricode).get(season_id)
 
-
+    # create players in Neo4j for this team's roster for the current season
+    create_players_for_team_season(tricode=tricode,
+                                   team_season_id=team_season_id,
+                                   season_id=season_id,
+                                   game_types_for_season=game_types_for_season)
 
 
 if __name__ == "__main__":
