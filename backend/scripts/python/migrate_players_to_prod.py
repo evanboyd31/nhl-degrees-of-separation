@@ -49,7 +49,7 @@ def get_local_played_for_relationships() -> list[dict]:
         "player_id": player_attrs.get("id"),
         "player_attrs": player_attrs,
 
-        "ts_id": team_season_attrs.get("id"),
+        "team_season_id": team_season_attrs.get("id"),
         "team_season_attrs": team_season_attrs,
 
         "played_for_attrs": player_for_attrs
@@ -73,10 +73,38 @@ def chunked(iterable, size=2000):
       break
     yield batch
 
+def insert_players_batch_into_prod_db(players_batch: list[dict]) -> None:
+  """
+  The insert_players_batch_into_prod_db uses an UNWIND query which will insert
+  a batch of 2000 Player-[:PLAYED_FOR]->TeamSeason relationships at a time into
+  the production Neo4j database
+  
+  :param players_batch: Player-[:PLAYED_FOR]->TeamSeason relationships
+  :type players_batch: list[dict]
+  """
+
+  insert_players_batch_query = """
+  UNWIND $batch AS row
+  MERGE (ts:TeamSeason {id: row.team_season_id})
+    SET ts += row.team_season_attrs
+  MERGE (p:Player {id: row.player_id})
+    SET p += row.player_attrss
+  MERGE (p)-[pf:PLAYED_FOR]->(ts)
+    SET pf += row.played_for_attrs
+  """
+
+  with prod_driver.session() as session:
+    session.run(insert_players_batch_query,
+                batch=players_batch)
 
 def main() -> None:
   played_for_relationships = get_local_played_for_relationships()
 
+  total_played_fors_inserted = 0
+  for batch_index, batch in enumerate(chunked(played_for_relationships, size=2000)):
+    insert_players_batch_into_prod_db(batch)
+    total_played_fors_inserted += len(batch)
+    print(f"Batch {batch_index} completed, migrated {len(batch)} PLAYED_FOR relationships (total: {total_played_fors_inserted})")
 
 
 if __name__ == "__main__":
