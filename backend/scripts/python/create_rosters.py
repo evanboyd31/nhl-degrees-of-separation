@@ -65,17 +65,35 @@ def update_game_types(game_types: dict, tricode: str, game_types_for_seasons: li
   """
   
   game_types[tricode] = {}
-  
+
   for season_game_type in game_types_for_seasons:
     season_id = season_game_type.get("season")
-    game_types = season_game_type.get("gameTypes")
-    game_types[tricode][season_id] = game_types
+    season_game_types = season_game_type.get("gameTypes")
+    game_types[tricode][season_id] = season_game_types
 
 def main() -> None:
-  team_seasons = get_team_seasons()
+  seasons = get_team_seasons()
 
   # stores the types of games that a team played in during their seasons
   game_types = {}
+
+  for season in seasons:
+    team = season.get("team")
+    team_season = season.get("team_season")
+
+    tricode = team.get("tricode")
+    season_id = team_season.get("id")[2:]
+
+    # update the game type caching dictionary if necessary
+    if game_types.get(tricode, None) is None:
+      game_types_for_seasons = get_team_game_types_for_seasons(tricode=tricode)
+      update_game_types(game_types=game_types,
+                        tricode=tricode,
+                        game_types_for_seasons=game_types_for_seasons)
+      
+    game_types_for_season = game_types.get(tricode).get(season_id)
+
+
 
 
 if __name__ == "__main__":
