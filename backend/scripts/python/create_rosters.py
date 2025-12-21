@@ -29,7 +29,6 @@ def get_team_seasons() -> list[dict]:
   # get the team as well because we need the team tricode
   get_team_seasons_query = """
   MATCH (team_season:TeamSeason)-[:SEASON_FOR]->(team:Team)
-  WHERE team.full_name CONTAINS "Canucks"
   RETURN team, team_season
   ORDER BY team.tricode, team_season.id
   """
