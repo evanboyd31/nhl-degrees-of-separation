@@ -40,11 +40,14 @@ def run_get_shortest_path_between_two_players(session: Session, player_1_id: int
   MATCH (p1:Player {id: $player_1_id})
   MATCH (p2:Player {id: $player_2_id})
   MATCH path = shortestPath( (p1)-[:PLAYED_FOR*..30]-(p2) )
-  RETURN path, length(path) AS hops;
+  RETURN
+    length(path) AS hops,
+    [r IN relationships(path) | properties(r)] AS relationship_attrs,
+    [n IN nodes(path) | properties(n)] AS node_attrs
   """
 
   result = session.run(shortest_path_query,
                        player_1_id=player_1_id,
                        player_2_id=player_2_id)
 
-  return result.data()
+  return [record.data() for record in result]
