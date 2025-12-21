@@ -36,7 +36,7 @@ def get_local_played_for_relationships() -> list[dict]:
     rows = []
 
     for record in result:
-      player = record["player"]
+      player = record["p"]
       player_attrs = dict(player.items())
       
       played_for = record["pf"]
@@ -88,7 +88,7 @@ def insert_players_batch_into_prod_db(players_batch: list[dict]) -> None:
   MERGE (ts:TeamSeason {id: row.team_season_id})
     SET ts += row.team_season_attrs
   MERGE (p:Player {id: row.player_id})
-    SET p += row.player_attrss
+    SET p += row.player_attrs
   MERGE (p)-[pf:PLAYED_FOR]->(ts)
     SET pf += row.played_for_attrs
   """
