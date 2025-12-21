@@ -36,7 +36,7 @@ def get_team_seasons() -> list[dict]:
     rows = [record.data() for record in result]
     return rows
   
-def get_team_game_types_for_seasons(tricode: str) -> list[int]:
+def get_team_game_types_for_seasons(tricode: str) -> list[dict]:
   """
   The get_game_types_for_season function returns a list of the type of 
   games that a given team played in during their seasons (2 = regular season,
@@ -47,12 +47,35 @@ def get_team_game_types_for_seasons(tricode: str) -> list[int]:
   :return: a list of game types that the team played during each of their seasons (will either be [2] or [2, 3])
   :rtype: list[int]
   """
-  
+
   team_game_types_for_seasons = httpx.get(f"{TEAM_GAME_TYPES_BASE_API_URL}{tricode}").json()
   return team_game_types_for_seasons
 
+def update_game_types(game_types: dict, tricode: str, game_types_for_seasons: list[dict]) -> None:
+  """
+  The function update_game_types updates the game_types caching dictionary to map tricode -> season -> game_types
+  for each team season. Minimizes lookup time by using a dictionary rather than a list
+  
+  :param game_types: stores tricode -> season -> game_types entries
+  :type game_types: dict
+  :param tricode: tricode for an NHL team
+  :type tricode: str
+  :param game_types_for_seasons: a list of {"season", "gameTypes"} dictionary indicating the type of games the team played in, in each season
+  :type game_types_for_seasons: list[dict]
+  """
+  
+  game_types[tricode] = {}
+  
+  for season_game_type in game_types_for_seasons:
+    season_id = season_game_type.get("season")
+    game_types = season_game_type.get("gameTypes")
+    game_types[tricode][season_id] = game_types
+
 def main() -> None:
   team_seasons = get_team_seasons()
+
+  # stores the types of games that a team played in during their seasons
+  game_types = {}
 
 
 if __name__ == "__main__":
