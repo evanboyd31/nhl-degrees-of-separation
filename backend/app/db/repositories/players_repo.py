@@ -15,6 +15,7 @@ def run_get_players_by_search_string(session: Session, search_string: str):
   MATCH (p:Player)
   WHERE toLower(p.full_name) STARTS WITH toLower($search_string)
   RETURN p as player
+  ORDER BY p.full_name
   """
 
   result = session.run(search_for_player_query,
