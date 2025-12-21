@@ -141,6 +141,14 @@ def create_players_for_team_season(tricode: str, team_season_id: str, season_id:
 
 
 def main() -> None:
+  """
+  The main function performs the following logic via helper functions: 
+  for each NHL team, get the seasons they played in. For each season, 
+  get the types of games the team played in (regular season, playoffs). 
+  Query the teams roster for regular season and optionally playoff games,
+  and create Player nodes related to TeamSeason nodes
+  """
+
   seasons = get_team_seasons()
 
   # stores the types of games that a team played in during their seasons
