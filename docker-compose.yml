@@ -32,3 +32,14 @@ services:
       - LOCAL_NEO4J_URI=${LOCAL_NEO4J_URI}
     depends_on:
       - neo4j
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
