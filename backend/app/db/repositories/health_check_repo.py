@@ -2,15 +2,16 @@ from neo4j import Session
 
 def run_health_check_query(session: Session) -> dict | None:
   health_check_query = """
-  MATCH (t:Team)
-  WHERE t.tricode = "MTL"
-  RETURN t
+  MERGE (hc:HealthCheck {id: $id})
+  SET hc.last_check = datetime()
+  RETURN hc
   """
 
-  result = session.run(health_check_query)
+  result = session.run(health_check_query,
+                       id="health-check-id")
   
-  first_team = result.single()
-  if first_team:
-    return dict(first_team["t"])
+  health_check = result.single()
+  if health_check:
+    return dict(health_check["hc"])
   else:
     return None
