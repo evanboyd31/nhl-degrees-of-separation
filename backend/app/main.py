@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import health_check
 from app.api.routes import players
+from app.api.routes import image_proxy
 
 app = FastAPI(title="NHL Degrees of Separation")
 
@@ -24,3 +25,6 @@ app.include_router(health_check.router)
 
 # player routes
 app.include_router(players.router)
+
+# image proxy routes
+app.include_router(image_proxy.router)
