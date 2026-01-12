@@ -19,7 +19,7 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
       forceRefCurrent.d3Force(
         "x",
         d3
-          .forceX((d: any) => (d.order - (pathData.length - 1) / 2) * 200)
+          .forceX((d: any) => (d.order - (pathData.length - 1) / 2) * 120)
           .strength(0.05)
       );
 
@@ -41,12 +41,23 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
 
   const graphData = useMemo(() => {
     // create the nodes (each must have a unique id)
-    const nodes = pathData.map((item, index) => ({
-      id: item.id,
-      name: item.full_name,
-      order: index,
-      type: index % 2 === 1 ? "team" : "player",
-    }));
+    const nodes = pathData.map((item, index) => {
+      // redirect to the image-proxy endpoint to workaround CORS restrictions
+      const image = new Image();
+      // depending on if the current node is a player or a team, the image attribute will be different
+      const encodedUrl = encodeURIComponent(
+        index % 2 == 0 ? item.headshot_url : item.logo_url
+      );
+      image.src = `${import.meta.env.VITE_BASE_API_URL}image-proxy/?image_url=${encodedUrl}`;
+
+      return {
+        id: item.id,
+        name: item.full_name,
+        order: index,
+        type: index % 2 === 1 ? "team" : "player",
+        image: image,
+      };
+    });
 
     // create the links (each must have a source and target id matching the ids used above)
     const links = pathData.slice(0, -1).map((_, i) => ({
@@ -71,7 +82,8 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
         linkDirectionalParticleSpeed={0.005}
         d3AlphaDecay={0.05}
         nodeCanvasObject={(node: any, ctx, globalScale) => {
-          const size = 14;
+          // make the team node bigger as the logos tend to be bigger images and do not scale well
+          const size = node.type === "team" ? 24 : 18;
           const fontSize = 13 / globalScale;
 
           ctx.save();
@@ -81,6 +93,30 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
           ctx.clip();
           ctx.fillStyle = "#333";
           ctx.fill();
+
+          // draw the image for the team or player if it is valid
+          if (
+            node.image &&
+            node.image.complete &&
+            node.image.naturalWidth !== 0
+          ) {
+            // compute aspect ratio to find the scaling factor for team and player images to scale well to nodes
+            const imgW = node.image.naturalWidth;
+            const imgH = node.image.naturalHeight;
+            const useHeight = imgH > imgW;
+            const ratio = useHeight ? (size * 2) / imgH : (size * 2) / imgW;
+            const drawW = imgW * ratio;
+            const drawH = imgH * ratio;
+
+            ctx.drawImage(
+              node.image,
+              node.x - drawW / 2,
+              node.y - drawH / 2,
+              drawW,
+              drawH
+            );
+          }
+
           ctx.restore();
 
           // color code the borders (simple for now, will be updated based on team)
