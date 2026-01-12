@@ -20,3 +20,25 @@ export const getPlayersByName = async (
     return [];
   }
 };
+
+/**
+ * The getShortestPathBetweenTwoPlayers function will return the shortest path connecting
+ * two NHL players and the teams that they have played for
+ * @param player1Id - NHL API id of the first player
+ * @param player2Id - NHL API id of the second player
+ * @returns an array representing the shortest Player - TeamSeason - Player - TeamSeason - ... - Player path
+ */
+export const getShortestPathBetweenTwoPlayers = async (
+  player1Id: Number,
+  player2Id: Number
+) => {
+  try {
+    const response = await axios.get(
+      `${API_URL}players/shortest-path/?player_1_id=${player1Id}&player_2_id=${player2Id}`
+    );
+
+    return response.data?.results?.path || [];
+  } catch (error) {
+    return [];
+  }
+};
