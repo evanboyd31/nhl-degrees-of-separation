@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import PlayerSearchHeader from "./components/PlayerSearchHeader";
+import ShortestPathGraph from "./components/ShortestPathGraph";
 import { getShortestPathBetweenTwoPlayers } from "./api/nhlAPI";
 import { CircularProgress } from "@mui/material";
 import { type Player } from "./types/nhl";
+import "./styles/global.css";
 
 const App = () => {
   const [player1, setPlayer1] = useState<Player | null>(null);
@@ -42,20 +44,14 @@ const App = () => {
         onSelect2={setPlayer2}
       />
 
-      <main
-        style={{
-          paddingTop: "100px",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+      <main className="main-content">
         {loadingPath && <CircularProgress />}
-        {shortestPath ? (
-          <div>{JSON.stringify(shortestPath)}</div>
+        {shortestPath.length !== 0 ? (
+          <ShortestPathGraph pathData={shortestPath} />
         ) : (
-          <div>
-            Select two players from the dropdowns to see their degrees of
-            separation
+          <div className="help-text">
+            Search for two players from the dropdowns to find their common
+            teammates
           </div>
         )}
       </main>
