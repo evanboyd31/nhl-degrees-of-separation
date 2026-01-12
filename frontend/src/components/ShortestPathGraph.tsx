@@ -19,7 +19,7 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
       forceRefCurrent.d3Force(
         "x",
         d3
-          .forceX((d: any) => (d.order - (pathData.length - 1) / 2) * 200)
+          .forceX((d: any) => (d.order - (pathData.length - 1) / 2) * 120)
           .strength(0.05)
       );
 
@@ -83,7 +83,7 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
         d3AlphaDecay={0.05}
         nodeCanvasObject={(node: any, ctx, globalScale) => {
           // make the team node bigger as the logos tend to be bigger images and do not scale well
-          const size = node.type === "team" ? 18 : 14;
+          const size = node.type === "team" ? 24 : 18;
           const fontSize = 13 / globalScale;
 
           ctx.save();
@@ -100,12 +100,20 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
             node.image.complete &&
             node.image.naturalWidth !== 0
           ) {
+            // compute aspect ratio to find the scaling factor for team and player images to scale well to nodes
+            const imgW = node.image.naturalWidth;
+            const imgH = node.image.naturalHeight;
+            const useHeight = imgH > imgW;
+            const ratio = useHeight ? (size * 2) / imgH : (size * 2) / imgW;
+            const drawW = imgW * ratio;
+            const drawH = imgH * ratio;
+
             ctx.drawImage(
               node.image,
-              node.x - size,
-              node.y - size,
-              size * 2,
-              size * 2
+              node.x - drawW / 2,
+              node.y - drawH / 2,
+              drawW,
+              drawH
             );
           }
 
