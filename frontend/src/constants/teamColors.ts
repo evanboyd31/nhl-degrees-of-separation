@@ -365,6 +365,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#010101",
   },
 
+  // Cleveland Barons
+  "https://assets.nhle.com/logos/nhl/svg/CLE_19761977-19771978_light.svg": {
+    fullName: "Cleveland Barons",
+    startYear: 1976,
+    endYear: 1978,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
