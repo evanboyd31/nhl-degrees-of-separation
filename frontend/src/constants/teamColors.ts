@@ -689,6 +689,22 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#c69214",
   },
 
+  // Minnesota Wild
+  "https://assets.nhle.com/logos/nhl/svg/MIN_20002001-20122013_light.svg": {
+    fullName: "Minnesota Wild",
+    startYear: 2000,
+    endYear: 2013,
+    primaryColor: "#154734",
+    secondaryColor: "#a6192e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg": {
+    fullName: "Minnesota Wild",
+    startYear: 2000,
+    endYear: 2013,
+    primaryColor: "#154734",
+    secondaryColor: "#a6192e",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
