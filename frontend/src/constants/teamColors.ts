@@ -587,6 +587,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#00205b",
   },
 
+  // Kansas City Scouts
+  "https://assets.nhle.com/logos/nhl/svg/KCS_19741975-19761977_light.svg": {
+    fullName: "Kansas City Scouts",
+    startYear: 1974,
+    endYear: 1977,
+    primaryColor: "#041e42",
+    secondaryColor: "#c8102e",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
