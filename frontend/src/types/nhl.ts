@@ -6,8 +6,8 @@ export interface Player {
 
 export interface TeamPeriod {
   fullName: string;
-  startYear: number;
-  endYear: number;
+  startYear?: number;
+  endYear?: number;
   primaryColor: string;
   secondaryColor: string;
 }
