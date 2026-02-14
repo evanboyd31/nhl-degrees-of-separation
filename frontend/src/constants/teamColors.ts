@@ -478,6 +478,55 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffffff",
   },
 
+  // Edmonton Oilers
+  "https://assets.nhle.com/logos/nhl/svg/EDM_19791980-19851986_light.svg": {
+    fullName: "Edmonton Oilers",
+    startYear: 1979,
+    endYear: 1986,
+    primaryColor: "#00205b",
+    secondaryColor: "#cf4520",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/EDM_19861987-19951996_light.svg": {
+    fullName: "Edmonton Oilers",
+    startYear: 1986,
+    endYear: 1996,
+    primaryColor: "#012169",
+    secondaryColor: "#ff6720",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/EDM_19961997_light.svg": {
+    fullName: "Edmonton Oilers",
+    startYear: 1996,
+    endYear: 1997,
+    primaryColor: "#00205b",
+    secondaryColor: "#8f654d",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/EDM_19971998-20102011_light.svg": {
+    fullName: "Edmonton Oilers",
+    startYear: 1997,
+    endYear: 2011,
+    primaryColor: "#041e42",
+    secondaryColor: "#8f654d",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/EDM_20112012-20162017_light.svg": {
+    fullName: "Edmonton Oilers",
+    startYear: 2011,
+    endYear: 2017,
+    primaryColor: "#00205b",
+    secondaryColor: "#cf4520",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/EDM_20172018-20212022_light.svg": {
+    fullName: "Edmonton Oilers",
+    startYear: 2017,
+    endYear: 2022,
+    primaryColor: "#041e42",
+    secondaryColor: "#fc4c02",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg": {
+    fullName: "Edmonton Oilers",
+    primaryColor: "#00205b",
+    secondaryColor: "#cf4520",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
