@@ -80,6 +80,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#154734",
   },
 
+  // Atlanta Flames
+  "https://assets.nhle.com/logos/nhl/svg/AFM_19721973-19791980_light.svg": {
+    fullName: "Atlanta Flames",
+    startYear: 1972,
+    endYear: 1980,
+    primaryColor: "#c8102e",
+    secondaryColor: "#ffd100",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
