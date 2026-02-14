@@ -307,6 +307,64 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#a2aaad",
   },
 
+  // Chicago Blackhawks
+  "https://assets.nhle.com/logos/nhl/svg/CHI_19261927-19561957_light.svg": {
+    fullName: "Chicago Blackhawks",
+    startYear: 1926,
+    endYear: 1957,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CHI_19571958-19611962_light.svg": {
+    fullName: "Chicago Blackhawks",
+    startYear: 1957,
+    endYear: 1962,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CHI_19621963-19641965_light.svg": {
+    fullName: "Chicago Blackhawks",
+    startYear: 1962,
+    endYear: 1965,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CHI_19651966-19881989_light.svg": {
+    fullName: "Chicago Blackhawks",
+    startYear: 1965,
+    endYear: 1989,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CHI_19891990-19951996_light.svg": {
+    fullName: "Chicago Blackhawks",
+    startYear: 1989,
+    endYear: 1996,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CHI_19961997-19981999_light.svg": {
+    fullName: "Chicago Blackhawks",
+    startYear: 1989,
+    endYear: 1996,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CHI_19981999-20242025_light.svg": {
+    fullName: "Chicago Blackhawks",
+    startYear: 1998,
+    endYear: 2025,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CHI_light.svg?season=20252026": {
+    fullName: "Chicago Blackhawks",
+    startYear: 2025,
+    endYear: 2026,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
