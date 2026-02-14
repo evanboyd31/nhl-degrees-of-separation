@@ -89,6 +89,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffd100",
   },
 
+  // Atlanta Thrashers
+  "https://assets.nhle.com/logos/nhl/svg/ATL_19992000-20102011_light.svg": {
+    fullName: "Atlanta Thrashers",
+    startYear: 1999,
+    endYear: 2011,
+    primaryColor: "#5c88da",
+    secondaryColor: "#ffa300",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
