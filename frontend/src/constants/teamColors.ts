@@ -388,6 +388,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#236192",
   },
 
+  // Colorado Rockies
+  "https://assets.nhle.com/logos/nhl/svg/CLR_19761977-19811982_light.svg": {
+    fullName: "Colorado Rockies",
+    startYear: 1976,
+    endYear: 1982,
+    primaryColor: "#00205b",
+    secondaryColor: "#ffc72c",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
