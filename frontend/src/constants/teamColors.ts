@@ -439,6 +439,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#a2aaad",
   },
 
+  // Detroit Cougars
+  "https://assets.nhle.com/logos/nhl/svg/DCG_19261927-19291930_light.svg": {
+    fullName: "Detroit Cougars",
+    startYear: 1926,
+    endYear: 1930,
+    primaryColor: "#e4002b",
+    secondaryColor: "#ffffff",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
