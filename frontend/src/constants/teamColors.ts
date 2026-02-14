@@ -263,6 +263,29 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffd100",
   },
 
+  // Oakland/California Golden Seals
+  "https://assets.nhle.com/logos/nhl/svg/OAK_19671968-19691970_light.svg": {
+    fullName: "Oakland Seals",
+    startYear: 1967,
+    endYear: 1970,
+    primaryColor: "#00205b",
+    secondaryColor: "#00965e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CGS_19701971-19731974_light.svg": {
+    fullName: "California Golden Seals",
+    startYear: 1970,
+    endYear: 1974,
+    primaryColor: "#ffc72c",
+    secondaryColor: "#00965e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CGS_19741975-19761977_light.svg": {
+    fullName: "California Golden Seals",
+    startYear: 1974,
+    endYear: 1977,
+    primaryColor: "#009ca6",
+    secondaryColor: "#ffd100",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
