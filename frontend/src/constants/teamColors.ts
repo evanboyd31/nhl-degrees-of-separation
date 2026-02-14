@@ -36,6 +36,50 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#89734c",
   },
 
+  // Arizona/Phoenix Coyotes
+  "https://assets.nhle.com/logos/nhl/svg/PHX_19961997-19981999_light.svg": {
+    fullName: "Phoenix Coyotes",
+    startYear: 1996,
+    endYear: 1999,
+    primaryColor: "#862633",
+    secondaryColor: "#154734",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PHX_19992000_light.svg": {
+    fullName: "Phoenix Coyotes",
+    startYear: 1999,
+    endYear: 2000,
+    primaryColor: "#6f263d",
+    secondaryColor: "#154734",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PHX_20002001-20022003_light.svg": {
+    fullName: "Phoenix Coyotes",
+    startYear: 2000,
+    endYear: 2003,
+    primaryColor: "#6f263d",
+    secondaryColor: "#154734",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PHX_20032004-20132014_light.svg": {
+    fullName: "Phoenix Coyotes",
+    startYear: 2003,
+    endYear: 2014,
+    primaryColor: "#862633",
+    secondaryColor: "#ddcba4",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/ARI_20142015-20202021_light.svg": {
+    fullName: "Arizona Coyotes",
+    startYear: 2014,
+    endYear: 2021,
+    primaryColor: "#862633",
+    secondaryColor: "#ddcba4",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/ARI_20202021-20232024_light.svg": {
+    fullName: "Arizona Coyotes",
+    startYear: 2020,
+    endYear: 2024,
+    primaryColor: "#6f263d",
+    secondaryColor: "#154734",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
