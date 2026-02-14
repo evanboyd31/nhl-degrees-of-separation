@@ -5,7 +5,7 @@ export interface Player {
 }
 
 export interface TeamPeriod {
-  tricode: string;
+  fullName: string;
   startYear: number;
   endYear: number;
   primaryColor: string;
