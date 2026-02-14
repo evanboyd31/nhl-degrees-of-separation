@@ -242,6 +242,27 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffb81c",
   },
 
+  // Calgary Flames
+  "https://assets.nhle.com/logos/nhl/svg/CGY_19801981-19931994_light.svg": {
+    fullName: "Calgary Flames",
+    startYear: 1980,
+    endYear: 1994,
+    primaryColor: "#c8102e",
+    secondaryColor: "#ffd100",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CGY_19941995-20192020_light.svg": {
+    fullName: "Calgary Flames",
+    startYear: 1994,
+    endYear: 2020,
+    primaryColor: "#c8102e",
+    secondaryColor: "#f1be48",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CGY_light.svg": {
+    fullName: "Calgary Flames",
+    primaryColor: "#c8102e",
+    secondaryColor: "#ffd100",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
