@@ -457,6 +457,27 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffffff",
   },
 
+  // Detroit Red Wings
+  "https://assets.nhle.com/logos/nhl/svg/DET_19321933-19471948_light.svg": {
+    fullName: "Detroit Red Wings",
+    startYear: 1932,
+    endYear: 1948,
+    primaryColor: "#e4002b",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/DET_light.svg?season=20252026": {
+    fullName: "Detroit Red Wings",
+    startYear: 2025,
+    endYear: 2026,
+    primaryColor: "#c8102e",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/DET_light.svg": {
+    fullName: "Detroit Red Wings",
+    primaryColor: "#c8102e",
+    secondaryColor: "#ffffff",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
