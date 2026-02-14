@@ -726,6 +726,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffffff",
   },
 
+  // Montreal Wanderers
+  "https://assets.nhle.com/logos/nhl/svg/MWN_19171918_light.svg": {
+    fullName: "Montreal Wanderers",
+    startYear: 1917,
+    endYear: 1918,
+    primaryColor: "#e4002b",
+    secondaryColor: "#ffffff",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
