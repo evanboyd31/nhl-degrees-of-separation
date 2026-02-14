@@ -666,6 +666,29 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#010101",
   },
 
+  // Minnesota North Stars
+  "https://assets.nhle.com/logos/nhl/svg/MNS_19671968-19841985_light.svg": {
+    fullName: "Minnesota North Stars",
+    startYear: 1967,
+    endYear: 1985,
+    primaryColor: "#009639",
+    secondaryColor: "#ffd100",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MNS_19851986-19901991_light.svg": {
+    fullName: "Minnesota North Stars",
+    startYear: 1985,
+    endYear: 1991,
+    primaryColor: "#009639",
+    secondaryColor: "#ffd100",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MNS_19911992-19921993_light.svg": {
+    fullName: "Minnesota North Stars",
+    startYear: 1991,
+    endYear: 1993,
+    primaryColor: "#007a33",
+    secondaryColor: "#c69214",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
