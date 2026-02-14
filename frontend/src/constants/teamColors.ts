@@ -571,6 +571,22 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#010101",
   },
 
+  // Hartford Whalers
+  "https://assets.nhle.com/logos/nhl/svg/HFD_19791980-19911992_light.svg": {
+    fullName: "Hartford Whalers",
+    startYear: 1979,
+    endYear: 1992,
+    primaryColor: "#00843d",
+    secondaryColor: "#012169",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/HFD_19921993-19961997_light.svg": {
+    fullName: "Hartford Whalers",
+    startYear: 1992,
+    endYear: 1997,
+    primaryColor: "#046a38",
+    secondaryColor: "#00205b",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
