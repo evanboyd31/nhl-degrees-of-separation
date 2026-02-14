@@ -699,10 +699,31 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
   },
   "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg": {
     fullName: "Minnesota Wild",
-    startYear: 2000,
-    endYear: 2013,
     primaryColor: "#154734",
     secondaryColor: "#a6192e",
+  },
+
+  // Montreal Maroons
+  "https://assets.nhle.com/logos/nhl/svg/MMR_19241925_light.svg": {
+    fullName: "Montreal Maroons",
+    startYear: 1924,
+    endYear: 1925,
+    primaryColor: "#6f263d",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MMR_19251926-19341935_light.svg": {
+    fullName: "Montreal Maroons",
+    startYear: 1925,
+    endYear: 1935,
+    primaryColor: "#6f263d",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MMR_19351936-19371938_light.svg": {
+    fullName: "Montreal Maroons",
+    startYear: 1935,
+    endYear: 1938,
+    primaryColor: "#6f263d",
+    secondaryColor: "#ffffff",
   },
 
   // Quebec Nordiques
