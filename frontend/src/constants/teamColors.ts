@@ -191,6 +191,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#010101",
   },
 
+  // Brooklyn Americans
+  "https://assets.nhle.com/logos/nhl/svg/BRK_19411942_light.svg": {
+    fullName: "Brooklyn Americans",
+    startYear: 1941,
+    endYear: 1942,
+    primaryColor: "#0033a0",
+    secondaryColor: "#c8102e",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
