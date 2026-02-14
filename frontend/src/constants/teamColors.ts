@@ -596,6 +596,76 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#c8102e",
   },
 
+  // Los Angeles Kings
+  "https://assets.nhle.com/logos/nhl/svg/LAK_19671968-19741975_light.svg": {
+    fullName: "Los Angeles Kings",
+    startYear: 1967,
+    endYear: 1975,
+    primaryColor: "#582c83",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/LAK_19751976-19861987_light.svg": {
+    fullName: "Los Angeles Kings",
+    startYear: 1975,
+    endYear: 1987,
+    primaryColor: "#582c83",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/LAK_19871988_light.svg": {
+    fullName: "Los Angeles Kings",
+    startYear: 1987,
+    endYear: 1988,
+    primaryColor: "#8d9093",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/LAK_19881989-19971998_light.svg": {
+    fullName: "Los Angeles Kings",
+    startYear: 1988,
+    endYear: 1998,
+    primaryColor: "#8d9093",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/LAK_19981999-20012002_light.svg": {
+    fullName: "Los Angeles Kings",
+    startYear: 1998,
+    endYear: 2002,
+    primaryColor: "#8d9093",
+    secondaryColor: "#250e62",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/LAK_20022003-20092010_light.svg": {
+    fullName: "Los Angeles Kings",
+    startYear: 2002,
+    endYear: 2010,
+    primaryColor: "#8d9093",
+    secondaryColor: "#250e62",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/LAK_20102011_light.svg": {
+    fullName: "Los Angeles Kings",
+    startYear: 2010,
+    endYear: 2011,
+    primaryColor: "#8d9093",
+    secondaryColor: "#250e62",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/LAK_20112012-20182019_light.svg": {
+    fullName: "Los Angeles Kings",
+    startYear: 2011,
+    endYear: 2019,
+    primaryColor: "#a2aaad",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/LAK_20192020-20232024_light.svg": {
+    fullName: "Los Angeles Kings",
+    startYear: 2019,
+    endYear: 2024,
+    primaryColor: "#a2aaad",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/LAK_light.svg": {
+    fullName: "Los Angeles Kings",
+    primaryColor: "#a2aaad",
+    secondaryColor: "#010101",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
