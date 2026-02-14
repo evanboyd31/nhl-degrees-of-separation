@@ -374,6 +374,20 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#010101",
   },
 
+  // Colorado Avalanche
+  "https://assets.nhle.com/logos/nhl/svg/COL_19951996-19981999_light.svg": {
+    fullName: "Colorado Avalanche",
+    startYear: 1995,
+    endYear: 1999,
+    primaryColor: "#862633",
+    secondaryColor: "#236192",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/COL_light.svg": {
+    fullName: "Colorado Avalanche",
+    primaryColor: "#862633",
+    secondaryColor: "#236192",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
