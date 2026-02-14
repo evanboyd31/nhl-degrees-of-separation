@@ -286,6 +286,27 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffd100",
   },
 
+  // Carolina Hurricanes
+  "https://assets.nhle.com/logos/nhl/svg/CAR_19971998-19981999_light.svg": {
+    fullName: "Carolina Hurricanes",
+    startYear: 1997,
+    endYear: 1999,
+    primaryColor: "#e4002b",
+    secondaryColor: "#8d9093",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CAR_19992000-20122013_light.svg": {
+    fullName: "Carolina Hurricanes",
+    startYear: 1999,
+    endYear: 2013,
+    primaryColor: "#c8102e",
+    secondaryColor: "#8d9093",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg": {
+    fullName: "Carolina Hurricanes",
+    primaryColor: "#cd001a",
+    secondaryColor: "#a2aaad",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
