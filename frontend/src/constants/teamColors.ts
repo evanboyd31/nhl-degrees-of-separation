@@ -200,6 +200,48 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#c8102e",
   },
 
+  // Buffalo Sabres
+  "https://assets.nhle.com/logos/nhl/svg/BUF_19701971-19951996_light.svg": {
+    fullName: "Buffalo Sabres",
+    startYear: 1970,
+    endYear: 1996,
+    primaryColor: "#003087",
+    secondaryColor: "#f3d03e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/BUF_19961997-19981999_light.svg": {
+    fullName: "Buffalo Sabres",
+    startYear: 1996,
+    endYear: 1999,
+    primaryColor: "#e4002b",
+    secondaryColor: "#8d9093",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/BUF_19992000-20052006_light.svg": {
+    fullName: "Buffalo Sabres",
+    startYear: 1996,
+    endYear: 1999,
+    primaryColor: "#c8102e",
+    secondaryColor: "#8d9093",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/BUF_20062007-20092010_light.svg": {
+    fullName: "Buffalo Sabres",
+    startYear: 2006,
+    endYear: 2010,
+    primaryColor: "#041e42",
+    secondaryColor: "#ffb81c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/BUF_20102011-20192020_light.svg": {
+    fullName: "Buffalo Sabres",
+    startYear: 2010,
+    endYear: 2020,
+    primaryColor: "#041e42",
+    secondaryColor: "#ffb81c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg": {
+    fullName: "Buffalo Sabres",
+    primaryColor: "#003087",
+    secondaryColor: "#ffb81c",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
