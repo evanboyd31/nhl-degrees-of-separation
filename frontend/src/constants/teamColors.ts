@@ -397,6 +397,20 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffc72c",
   },
 
+  // Columbus Blue Jackets
+  "https://assets.nhle.com/logos/nhl/svg/CBJ_20002001-20062007_light.svg": {
+    fullName: "Columbus Blue Jackets",
+    startYear: 2000,
+    endYear: 2007,
+    primaryColor: "#041e42",
+    secondaryColor: "#c8102e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg": {
+    fullName: "Columbus Blue Jackets",
+    primaryColor: "#041e42",
+    secondaryColor: "#c8102e",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
