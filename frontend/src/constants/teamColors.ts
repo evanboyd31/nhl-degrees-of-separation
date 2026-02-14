@@ -411,6 +411,34 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#c8102e",
   },
 
+  // Dallas Stars
+  "https://assets.nhle.com/logos/nhl/svg/DAL_19931994_light.svg": {
+    fullName: "Dallas Stars",
+    startYear: 1993,
+    endYear: 1994,
+    primaryColor: "#007a33",
+    secondaryColor: "#c69214",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/DAL_19941995-20122013_light.svg": {
+    fullName: "Dallas Stars",
+    startYear: 1994,
+    endYear: 2013,
+    primaryColor: "#154734",
+    secondaryColor: "#c69214",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/DAL_20122013-20202021_light.svg": {
+    fullName: "Dallas Stars",
+    startYear: 2012,
+    endYear: 2021,
+    primaryColor: "#006341",
+    secondaryColor: "#a2aaad",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/DAL_light.svg": {
+    fullName: "Dallas Stars",
+    primaryColor: "#00843d",
+    secondaryColor: "#a2aaad",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
