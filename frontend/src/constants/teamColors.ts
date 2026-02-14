@@ -448,6 +448,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffffff",
   },
 
+  // Detroit Falcons
+  "https://assets.nhle.com/logos/nhl/svg/DFL_19301931-19311932_light.svg": {
+    fullName: "Detroit Falcons",
+    startYear: 1930,
+    endYear: 1932,
+    primaryColor: "#e4002b",
+    secondaryColor: "#ffffff",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
