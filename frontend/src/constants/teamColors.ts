@@ -548,6 +548,29 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#041e42",
   },
 
+  // Hamilton Tigers
+  "https://assets.nhle.com/logos/nhl/svg/HAM_19201921_light.svg": {
+    fullName: "Hamilton Tigers",
+    startYear: 1920,
+    endYear: 1921,
+    primaryColor: "#e57200",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/HAM_19211922-19221923_light.svg": {
+    fullName: "Hamilton Tigers",
+    startYear: 1921,
+    endYear: 1923,
+    primaryColor: "#e57200",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/HAM_19231924-19241925_light.svg": {
+    fullName: "Hamilton Tigers",
+    startYear: 1923,
+    endYear: 1925,
+    primaryColor: "#ffc72c",
+    secondaryColor: "#010101",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
