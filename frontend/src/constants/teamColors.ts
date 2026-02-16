@@ -1116,6 +1116,43 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffffff",
   },
 
+  // San Jose Sharks
+  "https://assets.nhle.com/logos/nhl/svg/SJS_19911992-19971998_light.svg": {
+    fullName: "San Jose Sharks",
+    startYear: 1991,
+    endYear: 1998,
+    primaryColor: "#00778b",
+    secondaryColor: "#a2aaad",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/SJS_19981999-20062007_light.svg": {
+    fullName: "San Jose Sharks",
+    startYear: 1999,
+    endYear: 2007,
+    primaryColor: "#00778b",
+    secondaryColor: "#a2aaad",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/SJS_20072008_light.svg": {
+    fullName: "San Jose Sharks",
+    startYear: 2007,
+    endYear: 2008,
+    primaryColor: "#004f59",
+    secondaryColor: "#e57200",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/SJS_20082009-20232024_light.svg": {
+    fullName: "San Jose Sharks",
+    startYear: 2008,
+    endYear: 2024,
+    primaryColor: "#00617f",
+    secondaryColor: "#e57200",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg": {
+    fullName: "San Jose Sharks",
+    startYear: 2008,
+    endYear: 2024,
+    primaryColor: "#00778b",
+    secondaryColor: "#e57200",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
