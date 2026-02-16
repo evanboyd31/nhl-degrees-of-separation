@@ -833,6 +833,43 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#010101",
   },
 
+  // New York Americans
+  "https://assets.nhle.com/logos/nhl/svg/NYA_19251926-19291930_light.svg": {
+    fullName: "New York Americans",
+    startYear: 1925,
+    endYear: 1930,
+    primaryColor: "#c8102e",
+    secondaryColor: "#0033a0",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYA_19301931-19341935_light.svg": {
+    fullName: "New York Americans",
+    startYear: 1930,
+    endYear: 1935,
+    primaryColor: "#c8102e",
+    secondaryColor: "#0033a0",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYA_19351936-19381939_light.svg": {
+    fullName: "New York Americans",
+    startYear: 1935,
+    endYear: 1939,
+    primaryColor: "#c8102e",
+    secondaryColor: "#0033a0",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYA_19391940_light.svg": {
+    fullName: "New York Americans",
+    startYear: 1939,
+    endYear: 1940,
+    primaryColor: "#c8102e",
+    secondaryColor: "#0033a0",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYA_19401941_light.svg": {
+    fullName: "New York Americans",
+    startYear: 1940,
+    endYear: 1941,
+    primaryColor: "#c8102e",
+    secondaryColor: "#0033a0",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
