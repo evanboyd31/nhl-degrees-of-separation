@@ -905,6 +905,62 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#fc4c02",
   },
 
+  // New York Rangers
+  "https://assets.nhle.com/logos/nhl/svg/NYR_19261927-19341935_light.svg": {
+    fullName: "New York Rangers",
+    startYear: 1926,
+    endYear: 1935,
+    primaryColor: "#0072ce",
+    secondaryColor: "#c8102e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYR_19351936-19461947_light.svg": {
+    fullName: "New York Rangers",
+    startYear: 1935,
+    endYear: 1947,
+    primaryColor: "#0072ce",
+    secondaryColor: "#c8102e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYR_19471948-19511952_light.svg": {
+    fullName: "New York Rangers",
+    startYear: 1947,
+    endYear: 1952,
+    primaryColor: "#00205b",
+    secondaryColor: "#c8102e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYR_19521953-19661967_light.svg": {
+    fullName: "New York Rangers",
+    startYear: 1952,
+    endYear: 1967,
+    primaryColor: "#00205b",
+    secondaryColor: "#c8102e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYR_19671968-19701971_light.svg": {
+    fullName: "New York Rangers",
+    startYear: 1967,
+    endYear: 1971,
+    primaryColor: "#00205b",
+    secondaryColor: "#c8102e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYR_19711972-19771978_light.svg": {
+    fullName: "New York Rangers",
+    startYear: 1971,
+    endYear: 1978,
+    primaryColor: "#00205b",
+    secondaryColor: "#c8102e",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYR_19781979-19981999_light.svg": {
+    fullName: "New York Rangers",
+    startYear: 1978,
+    endYear: 1999,
+    primaryColor: "#0072ce",
+    secondaryColor: "#e4002b",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg": {
+    fullName: "New York Rangers",
+    primaryColor: "#0033a0",
+    secondaryColor: "#c8102e",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
