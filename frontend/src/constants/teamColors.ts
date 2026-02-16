@@ -1288,4 +1288,60 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#003087",
     secondaryColor: "#ffffff",
   },
+
+  // Toronto Maple Leafs
+  "https://assets.nhle.com/logos/nhl/svg/TOR_19271928-19371938_light.svg": {
+    fullName: "Toronto Maple Leafs",
+    startYear: 1927,
+    endYear: 1938,
+    primaryColor: "#003087",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TOR_19381939-19621963_light.svg": {
+    fullName: "Toronto Maple Leafs",
+    startYear: 1938,
+    endYear: 1963,
+    primaryColor: "#003087",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TOR_19631964-19661967_light.svg": {
+    fullName: "Toronto Maple Leafs",
+    startYear: 1963,
+    endYear: 1967,
+    primaryColor: "#003087",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TOR_19671968-19691970_light.svg": {
+    fullName: "Toronto Maple Leafs",
+    startYear: 1967,
+    endYear: 1970,
+    primaryColor: "#003087",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TOR_19701971-19811982_light.svg": {
+    fullName: "Toronto Maple Leafs",
+    startYear: 1970,
+    endYear: 1982,
+    primaryColor: "#003087",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TOR_19821983-19861987_light.svg": {
+    fullName: "Toronto Maple Leafs",
+    startYear: 1982,
+    endYear: 1987,
+    primaryColor: "#003087",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TOR_19871988-20152016_light.svg": {
+    fullName: "Toronto Maple Leafs",
+    startYear: 1988,
+    endYear: 2016,
+    primaryColor: "#00205b",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg": {
+    fullName: "Toronto Maple Leafs",
+    primaryColor: "#00205b",
+    secondaryColor: "#ffffff",
+  },
 };
