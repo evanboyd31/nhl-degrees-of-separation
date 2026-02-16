@@ -1344,4 +1344,34 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#00205b",
     secondaryColor: "#ffffff",
   },
+
+  // Toronto St. Patricks
+  "https://assets.nhle.com/logos/nhl/svg/TSP_19191920-19211922_light.svg": {
+    fullName: "Toronto St. Patricks",
+    startYear: 1919,
+    endYear: 1922,
+    primaryColor: "#046a38",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TSP_19221923-19241925_light.svg": {
+    fullName: "Toronto St. Patricks",
+    startYear: 1922,
+    endYear: 1925,
+    primaryColor: "#046a38",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TSP_19251926_light.svg": {
+    fullName: "Toronto St. Patricks",
+    startYear: 1925,
+    endYear: 1926,
+    primaryColor: "#046a38",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TSP_19261927_light.svg": {
+    fullName: "Toronto St. Patricks",
+    startYear: 1926,
+    endYear: 1927,
+    primaryColor: "#046a38",
+    secondaryColor: "#ffffff",
+  },
 };
