@@ -1249,4 +1249,34 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#c8102e",
     secondaryColor: "#ffffff",
   },
+
+  // Tampa Bay Lightning
+  "https://assets.nhle.com/logos/nhl/svg/TBL_19921993-20002001_light.svg": {
+    fullName: "Tampa Bay Lightning",
+    startYear: 1992,
+    endYear: 2001,
+    primaryColor: "#003da5",
+    secondaryColor: "#8d9093",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TBL_20012002-20062007_light.svg": {
+    fullName: "Tampa Bay Lightning",
+    startYear: 2001,
+    endYear: 2007,
+    primaryColor: "#00205b",
+    secondaryColor: "#8d9093",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TBL_20072008-20102011_light.svg": {
+    fullName: "Tampa Bay Lightning",
+    startYear: 2007,
+    endYear: 2011,
+    primaryColor: "#00205b",
+    secondaryColor: "#8d9093",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/TBL_light.svg": {
+    fullName: "Tampa Bay Lightning",
+    startYear: 2007,
+    endYear: 2011,
+    primaryColor: "#00205b",
+    secondaryColor: "#ffffff",
+  },
 };
