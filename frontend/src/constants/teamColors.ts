@@ -1019,6 +1019,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#010101",
   },
 
+  // Philadelpha Quakers
+  "https://assets.nhle.com/logos/nhl/svg/QUA_19301931_light.svg": {
+    fullName: "Philadelphia Flyers",
+    startYear: 1930,
+    endYear: 1931,
+    primaryColor: "#fa5501",
+    secondaryColor: "#010101",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
