@@ -1374,4 +1374,13 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#046a38",
     secondaryColor: "#ffffff",
   },
+
+  // Utah Mammoth
+  "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg?season=20252026": {
+    fullName: "Utah Mammoth",
+    startYear: 2025,
+    endYear: 2026,
+    primaryColor: "#6cace4",
+    secondaryColor: "#ffffff",
+  },
 };
