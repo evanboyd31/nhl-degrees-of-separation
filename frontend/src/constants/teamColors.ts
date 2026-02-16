@@ -1425,4 +1425,11 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#00205b",
     secondaryColor: "#04793f",
   },
+
+  // Vegas Golden Knights
+  "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg": {
+    fullName: "Vegas Golden Knights",
+    primaryColor: "#b9975b",
+    secondaryColor: "#333f48",
+  },
 };
