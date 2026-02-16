@@ -1116,6 +1116,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffffff",
   },
 
+  // Quebec Nordiques
+  "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
+    fullName: "Quebec Nordiques",
+    startYear: 1979,
+    endYear: 1995,
+    primaryColor: "#0e7ad1",
+    secondaryColor: "#c8102e",
+  },
+
   // San Jose Sharks
   "https://assets.nhle.com/logos/nhl/svg/SJS_19911992-19971998_light.svg": {
     fullName: "San Jose Sharks",
@@ -1152,18 +1161,83 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#00778b",
     secondaryColor: "#e57200",
   },
+
+  // Seattle Kraken
   "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg": {
     fullName: "Seattle Kraken",
     primaryColor: "#041c2c",
     secondaryColor: "#9cdbd9",
   },
 
-  // Quebec Nordiques
-  "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
-    fullName: "Quebec Nordiques",
-    startYear: 1979,
-    endYear: 1995,
-    primaryColor: "#0e7ad1",
-    secondaryColor: "#c8102e",
+  // St. Louis Blues
+  "https://assets.nhle.com/logos/nhl/svg/STL_19671968-19771978_light.svg": {
+    fullName: "St. Louis Blues",
+    startYear: 1967,
+    endYear: 1978,
+    primaryColor: "#003087",
+    secondaryColor: "#fedb00",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/STL_19781979-19831984_light.svg": {
+    fullName: "St. Louis Blues",
+    startYear: 1978,
+    endYear: 1984,
+    primaryColor: "#003087",
+    secondaryColor: "#fedb00",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/STL_19841985-19861987_light.svg": {
+    fullName: "St. Louis Blues",
+    startYear: 1984,
+    endYear: 1987,
+    primaryColor: "#003087",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/STL_19871988-19881989_light.svg": {
+    fullName: "St. Louis Blues",
+    startYear: 1987,
+    endYear: 1989,
+    primaryColor: "#003087",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/STL_19891990-19971998_light.svg": {
+    fullName: "St. Louis Blues",
+    startYear: 1989,
+    endYear: 1998,
+    primaryColor: "#003087",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/STL_19981999_light.svg": {
+    fullName: "St. Louis Blues",
+    startYear: 1989,
+    endYear: 1999,
+    primaryColor: "#003087",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/STL_19992000_light.svg": {
+    fullName: "St. Louis Blues",
+    startYear: 1999,
+    endYear: 2000,
+    primaryColor: "#003087",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/STL_20002001-20072008_light.svg": {
+    fullName: "St. Louis Blues",
+    startYear: 2000,
+    endYear: 2008,
+    primaryColor: "#003087",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/STL_20082009-20242025_light.svg": {
+    fullName: "St. Louis Blues",
+    startYear: 2008,
+    endYear: 2025,
+    primaryColor: "#003087",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/STL_light.svg?season=20252026": {
+    fullName: "St. Louis Blues",
+    startYear: 2025,
+    endYear: 2026,
+    primaryColor: "#006ac6",
+    secondaryColor: "#ffb81c",
   },
 };
