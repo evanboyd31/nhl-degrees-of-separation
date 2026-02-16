@@ -1432,4 +1432,30 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#b9975b",
     secondaryColor: "#333f48",
   },
+
+  // Washington Capitals
+  "https://assets.nhle.com/logos/nhl/svg/WSH_19741975-19941995_light.svg": {
+    fullName: "Washington Capitals",
+    startYear: 1974,
+    endYear: 1995,
+    primaryColor: "#d50032",
+    secondaryColor: "#003da5",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/WSH_19951996-20062007_light.svg": {
+    fullName: "Washington Capitals",
+    startYear: 1995,
+    endYear: 2007,
+    primaryColor: "#236192",
+    secondaryColor: "#8f654d",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/WSH_light.svg": {
+    fullName: "Washington Capitals",
+    primaryColor: "#c8102e",
+    secondaryColor: "#041e42",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg": {
+    fullName: "Washington Capitals",
+    primaryColor: "#c8102e",
+    secondaryColor: "#041e42",
+  },
 };
