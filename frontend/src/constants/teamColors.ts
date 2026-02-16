@@ -1107,6 +1107,15 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#f2a900",
   },
 
+  // Quebec Bulldogs
+  "https://assets.nhle.com/logos/nhl/svg/QBD_19191920_light.svg": {
+    fullName: "Quebec Bulldogs",
+    startYear: 1919,
+    endYear: 1920,
+    primaryColor: "#0033a0",
+    secondaryColor: "#ffffff",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
