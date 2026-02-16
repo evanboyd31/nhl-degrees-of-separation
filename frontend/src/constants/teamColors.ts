@@ -1152,6 +1152,11 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#00778b",
     secondaryColor: "#e57200",
   },
+  "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg": {
+    fullName: "Seattle Kraken",
+    primaryColor: "#041c2c",
+    secondaryColor: "#9cdbd9",
+  },
 
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
