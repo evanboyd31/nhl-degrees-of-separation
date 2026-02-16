@@ -812,6 +812,27 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#041e42",
   },
 
+  // New Jersey Devils
+  "https://assets.nhle.com/logos/nhl/svg/NJD_19821983-19911992_light.svg": {
+    fullName: "New Jersey Devils",
+    startYear: 1982,
+    endYear: 1992,
+    primaryColor: "#ef3340",
+    secondaryColor: "#046a38",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NJD_19921993-19981999_light.svg": {
+    fullName: "New Jersey Devils",
+    startYear: 1992,
+    endYear: 1999,
+    primaryColor: "#e4002b",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg": {
+    fullName: "New Jersey Devils",
+    primaryColor: "#cd001a",
+    secondaryColor: "#010101",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
