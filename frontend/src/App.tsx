@@ -5,6 +5,7 @@ import { getShortestPathBetweenTwoPlayers } from "./api/nhlAPI";
 import { CircularProgress } from "@mui/material";
 import { type Player } from "./types/nhl";
 import "./styles/global.css";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [player1, setPlayer1] = useState<Player | null>(null);
@@ -25,7 +26,7 @@ const App = () => {
         const player2Id = player2.id;
         const shortestPathResponse = await getShortestPathBetweenTwoPlayers(
           player1Id,
-          player2Id
+          player2Id,
         );
         setShortestPath(shortestPathResponse);
         setLoadingPath(false);
@@ -50,11 +51,11 @@ const App = () => {
           <ShortestPathGraph pathData={shortestPath} />
         ) : (
           <div className="help-text">
-            Search for two players from the dropdowns to find their common
-            teammates
+            Search for two players from the dropdowns to find the shortest path
           </div>
         )}
       </main>
+      <Footer />
     </div>
   );
 };
