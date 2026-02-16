@@ -1028,6 +1028,64 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#010101",
   },
 
+  // Pittsburgh Penguins
+  "https://assets.nhle.com/logos/nhl/svg/PIT_19671968_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 1967,
+    endYear: 1968,
+    primaryColor: "#00205b",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PIT_19681969-19711972_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 1968,
+    endYear: 1972,
+    primaryColor: "#00205b",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PIT_19721973-19911992_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 1972,
+    endYear: 1992,
+    primaryColor: "#010101",
+    secondaryColor: "#ffc72c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PIT_19921993-19981999_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 1992,
+    endYear: 1999,
+    primaryColor: "#010101",
+    secondaryColor: "#ffbf3f",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PIT_19992000-20012002_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 1999,
+    endYear: 2002,
+    primaryColor: "#010101",
+    secondaryColor: "#ffbf3f",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PIT_20022003-20052006_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 2002,
+    endYear: 2006,
+    primaryColor: "#010101",
+    secondaryColor: "#b3a369",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PIT_20062007-20152016_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 2006,
+    endYear: 2016,
+    primaryColor: "#010101",
+    secondaryColor: "#b3a369",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PIT_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 2006,
+    endYear: 2016,
+    primaryColor: "#010101",
+    secondaryColor: "#ffb81c",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
