@@ -1080,10 +1080,31 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
   },
   "https://assets.nhle.com/logos/nhl/svg/PIT_light.svg": {
     fullName: "Pittsburgh Penguins",
-    startYear: 2006,
-    endYear: 2016,
     primaryColor: "#010101",
     secondaryColor: "#ffb81c",
+  },
+
+  // Pittsburgh Pirates
+  "https://assets.nhle.com/logos/nhl/svg/PIR_19251926-19271928_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 1925,
+    endYear: 1928,
+    primaryColor: "#010101",
+    secondaryColor: "#f2a900",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PIR_19281929_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 1928,
+    endYear: 1929,
+    primaryColor: "#010101",
+    secondaryColor: "#ffd100",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PIR_19291930_light.svg": {
+    fullName: "Pittsburgh Penguins",
+    startYear: 1929,
+    endYear: 1930,
+    primaryColor: "#010101",
+    secondaryColor: "#f2a900",
   },
 
   // Quebec Nordiques
