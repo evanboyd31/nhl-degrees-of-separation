@@ -870,6 +870,41 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#0033a0",
   },
 
+  // New York Islanders
+  "https://assets.nhle.com/logos/nhl/svg/NYI_19721973-19941995_light.svg": {
+    fullName: "New York Islanders",
+    startYear: 1972,
+    endYear: 1995,
+    primaryColor: "#0033a0",
+    secondaryColor: "#e03c31",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYI_19951996-19961997_light.svg": {
+    fullName: "New York Islanders",
+    startYear: 1995,
+    endYear: 1997,
+    primaryColor: "#00205b",
+    secondaryColor: "#fe5000",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYI_19971998-20092010_light.svg": {
+    fullName: "New York Islanders",
+    startYear: 1997,
+    endYear: 2010,
+    primaryColor: "#041e42",
+    secondaryColor: "#fc4c02",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYI_20102011-20162017_light.svg": {
+    fullName: "New York Islanders",
+    startYear: 2010,
+    endYear: 2017,
+    primaryColor: "#003087",
+    secondaryColor: "#fc4c02",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NYI_light.svg": {
+    fullName: "New York Islanders",
+    primaryColor: "#003087",
+    secondaryColor: "#fc4c02",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
