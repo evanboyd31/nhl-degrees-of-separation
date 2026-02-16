@@ -1458,4 +1458,27 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#c8102e",
     secondaryColor: "#041e42",
   },
+
+  // Winnipeg Jets (1979)
+  "https://assets.nhle.com/logos/nhl/svg/WIN_19791980-19891990_light.svg": {
+    fullName: "Winnipeg Jets (1979)",
+    startYear: 1979,
+    endYear: 1990,
+    primaryColor: "#c8102e",
+    secondaryColor: "#00205b",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/WIN_19901991-19951996_light.svg": {
+    fullName: "Winnipeg Jets (1979)",
+    startYear: 1990,
+    endYear: 1996,
+    primaryColor: "#c8102e",
+    secondaryColor: "#012169",
+  },
+
+  // Winnipeg Jets
+  "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg": {
+    fullName: "Winnipeg Jets",
+    primaryColor: "#041e42",
+    secondaryColor: "#a6192e",
+  },
 };
