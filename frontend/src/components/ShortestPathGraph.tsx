@@ -1,6 +1,7 @@
 import React, { useMemo, useRef, useEffect } from "react";
 import ForceGraph2D, { type ForceGraphMethods } from "react-force-graph-2d";
 import * as d3 from "d3-force";
+import { TEAM_COLORS } from "../constants/teamColors";
 
 interface PathGraphProps {
   pathData: any[];
@@ -20,7 +21,7 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
         "x",
         d3
           .forceX((d: any) => (d.order - (pathData.length - 1) / 2) * 120)
-          .strength(0.05)
+          .strength(0.05),
       );
 
       // center in the y direction
@@ -44,9 +45,14 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
     const nodes = pathData.map((item, index) => {
       // redirect to the image-proxy endpoint to workaround CORS restrictions
       const image = new Image();
+
+      // Look up colors if it's a team
+      const isTeam = index % 2 == 1;
+      const colors = isTeam ? TEAM_COLORS[item.logo_url] : null;
+
       // depending on if the current node is a player or a team, the image attribute will be different
       const encodedUrl = encodeURIComponent(
-        index % 2 == 0 ? item.headshot_url : item.logo_url
+        index % 2 == 0 ? item.headshot_url : item.logo_url,
       );
       image.src = `${import.meta.env.VITE_BASE_API_URL}image-proxy/?image_url=${encodedUrl}`;
 
@@ -56,14 +62,26 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
         order: index,
         type: index % 2 === 1 ? "team" : "player",
         image: image,
+        primaryColor: colors?.primaryColor || "#888",
+        secondaryColor: colors?.secondaryColor || "#FFF",
       };
     });
 
     // create the links (each must have a source and target id matching the ids used above)
-    const links = pathData.slice(0, -1).map((_, i) => ({
-      source: pathData[i].id,
-      target: pathData[i + 1].id,
-    }));
+    const links = pathData.slice(0, -1).map((_, i) => {
+      const sourceNode = nodes[i];
+      const targetNode = nodes[i + 1];
+
+      // in every path, either the current node or the next is team. we use the closest team's colors for the links
+      const teamNode = sourceNode.type === "team" ? sourceNode : targetNode;
+
+      return {
+        source: sourceNode.id,
+        target: targetNode.id,
+        color: teamNode.primaryColor,
+        particleColor: teamNode.secondaryColor,
+      };
+    });
 
     return { nodes, links };
   }, [pathData]);
@@ -74,11 +92,11 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
         ref={forceRef}
         graphData={graphData}
         backgroundColor="#1a1a1a"
-        linkColor={() => "#D3D3D3"}
-        linkWidth={2}
-        linkDirectionalParticles={2}
-        linkDirectionalParticleWidth={10}
-        linkDirectionalParticleColor={() => "#D1D7DB"}
+        linkColor={(link: any) => link.color}
+        linkDirectionalParticleColor={(link: any) => link.particleColor}
+        linkWidth={3}
+        linkDirectionalParticles={4}
+        linkDirectionalParticleWidth={6}
         linkDirectionalParticleSpeed={0.005}
         d3AlphaDecay={0.05}
         nodeCanvasObject={(node: any, ctx, globalScale) => {
@@ -113,18 +131,40 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
               node.x - drawW / 2,
               node.y - drawH / 2,
               drawW,
-              drawH
+              drawH,
             );
           }
 
           ctx.restore();
 
-          // color code the borders (simple for now, will be updated based on team)
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, size, 0, 2 * Math.PI, false);
-          ctx.lineWidth = 2 / globalScale;
-          ctx.strokeStyle = node.type === "player" ? "#888" : "#FFF";
-          ctx.stroke();
+          if (node.type === "team") {
+            // color each team node with a border of their primary and secondary colors
+            ctx.beginPath();
+            ctx.arc(
+              node.x,
+              node.y,
+              size + 2 / globalScale,
+              0,
+              2 * Math.PI,
+              false,
+            );
+            ctx.lineWidth = 3 / globalScale;
+            ctx.strokeStyle = node.primaryColor;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, size, 0, 2 * Math.PI, false);
+            ctx.lineWidth = 2 / globalScale;
+            ctx.strokeStyle = node.secondaryColor;
+            ctx.stroke();
+          } else {
+            // single border for players
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, size, 0, 2 * Math.PI, false);
+            ctx.lineWidth = 2 / globalScale;
+            ctx.strokeStyle = "#888";
+            ctx.stroke();
+          }
 
           // add a new line for each space as text gets jumbled
           ctx.font = `${fontSize}px Sans-Serif`;
@@ -136,7 +176,7 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
             ctx.fillText(
               line,
               node.x,
-              node.y + size + 6 + i * (fontSize * 1.2)
+              node.y + size + 6 + i * (fontSize * 1.2),
             );
           });
         }}
