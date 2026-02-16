@@ -961,6 +961,43 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#c8102e",
   },
 
+  // Ottawa Senators (1917)
+  "https://assets.nhle.com/logos/nhl/svg/SEN_19171918-19331934_light.svg": {
+    fullName: "Ottawa Senators (1917)",
+    startYear: 1917,
+    endYear: 1934,
+    primaryColor: "#c8102e",
+    secondaryColor: "#010101",
+  },
+
+  // Ottawa Senators
+  "https://assets.nhle.com/logos/nhl/svg/OTT_19921993-19961997_light.svg": {
+    fullName: "Ottawa Senators",
+    startYear: 1992,
+    endYear: 1997,
+    primaryColor: "#c8102e",
+    secondaryColor: "#89734c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/OTT_19971998-20062007_light.svg": {
+    fullName: "Ottawa Senators",
+    startYear: 1997,
+    endYear: 2007,
+    primaryColor: "#c8102e",
+    secondaryColor: "#89734c",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/OTT_20072008-20192020_light.svg": {
+    fullName: "Ottawa Senators",
+    startYear: 1997,
+    endYear: 2007,
+    primaryColor: "#c8102e",
+    secondaryColor: "#c69214",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg": {
+    fullName: "Ottawa Senators",
+    primaryColor: "#c8102e",
+    secondaryColor: "#b9975b",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
