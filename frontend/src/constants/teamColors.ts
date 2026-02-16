@@ -735,6 +735,69 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#ffffff",
   },
 
+  // Montreal Canadiens
+  "https://assets.nhle.com/logos/nhl/svg/MTL_19171918-19181919_light.svg": {
+    fullName: "Montreal Canadiens",
+    startYear: 1917,
+    endYear: 1919,
+    primaryColor: "#c8102e",
+    secondaryColor: "#003087",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MTL_19191920-19201921_light.svg": {
+    fullName: "Montreal Canadiens",
+    startYear: 1919,
+    endYear: 1921,
+    primaryColor: "#c8102e",
+    secondaryColor: "#ffffff",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MTL_19211922_light.svg": {
+    fullName: "Montreal Canadiens",
+    startYear: 1921,
+    endYear: 1922,
+    primaryColor: "#c8102e",
+    secondaryColor: "#003087",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MTL_19221923-19241925_light.svg": {
+    fullName: "Montreal Canadiens",
+    startYear: 1922,
+    endYear: 1925,
+    primaryColor: "#c8102e",
+    secondaryColor: "#003087",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MTL_19251926-19311932_light.svg": {
+    fullName: "Montreal Canadiens",
+    startYear: 1925,
+    endYear: 1932,
+    primaryColor: "#c8102e",
+    secondaryColor: "#003087",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MTL_19321933-19461947_light.svg": {
+    fullName: "Montreal Canadiens",
+    startYear: 1932,
+    endYear: 1947,
+    primaryColor: "#c8102e",
+    secondaryColor: "#003087",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MTL_19471948-19551956_light.svg": {
+    fullName: "Montreal Canadiens",
+    startYear: 1947,
+    endYear: 1956,
+    primaryColor: "#c8102e",
+    secondaryColor: "#003087",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MTL_19561957-19981999_light.svg": {
+    fullName: "Montreal Canadiens",
+    startYear: 1956,
+    endYear: 1999,
+    primaryColor: "#c8102e",
+    secondaryColor: "#003087",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg": {
+    fullName: "Montreal Canadiens",
+    primaryColor: "#c8102e",
+    secondaryColor: "#001e62",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
