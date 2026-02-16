@@ -1383,4 +1383,46 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#6cace4",
     secondaryColor: "#ffffff",
   },
+
+  // Vancouver Canucks
+  "https://assets.nhle.com/logos/nhl/svg/VAN_19701971-19771978_light.svg": {
+    fullName: "Vancouver Canucks",
+    startYear: 1970,
+    endYear: 1978,
+    primaryColor: "#00205b",
+    secondaryColor: "#046a38",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/VAN_19781979-19911992_light.svg": {
+    fullName: "Vancouver Canucks",
+    startYear: 1978,
+    endYear: 1992,
+    primaryColor: "#f9423a",
+    secondaryColor: "#ffd100",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/VAN_19921993-19961997_light.svg": {
+    fullName: "Vancouver Canucks",
+    startYear: 1992,
+    endYear: 1997,
+    primaryColor: "#ef3340",
+    secondaryColor: "#ffd100",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/VAN_19971998-20062007_light.svg": {
+    fullName: "Vancouver Canucks",
+    startYear: 1997,
+    endYear: 2007,
+    primaryColor: "#003da5",
+    secondaryColor: "#862633",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/VAN_20072008-20182019_light.svg": {
+    fullName: "Vancouver Canucks",
+    startYear: 2007,
+    endYear: 2019,
+    primaryColor: "#00205b",
+    secondaryColor: "#04793f",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/VAN_light.svg": {
+    fullName: "Vancouver Canucks",
+    primaryColor: "#00205b",
+    secondaryColor: "#04793f",
+  },
 };
