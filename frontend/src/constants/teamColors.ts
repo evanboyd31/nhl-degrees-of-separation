@@ -798,6 +798,20 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#001e62",
   },
 
+  // Nashville Predators
+  "https://assets.nhle.com/logos/nhl/svg/NSH_19981999-20102011_light.svg": {
+    fullName: "Nashville Predators",
+    startYear: 1998,
+    endYear: 2011,
+    primaryColor: "#ffc72c",
+    secondaryColor: "#041e42",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/NSH_light.svg": {
+    fullName: "Nashville Predators",
+    primaryColor: "#ffb81c",
+    secondaryColor: "#041e42",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
