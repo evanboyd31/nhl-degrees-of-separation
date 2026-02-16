@@ -998,6 +998,27 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     secondaryColor: "#b9975b",
   },
 
+  // Philadelphia Flyers
+  "https://assets.nhle.com/logos/nhl/svg/PHI_19671968-19981999_light.svg": {
+    fullName: "Philadelphia Flyers",
+    startYear: 1967,
+    endYear: 1999,
+    primaryColor: "#ff6720",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PHI_19992000-20222023_light.svg": {
+    fullName: "Philadelphia Flyers",
+    startYear: 1999,
+    endYear: 2023,
+    primaryColor: "#fa4616",
+    secondaryColor: "#010101",
+  },
+  "https://assets.nhle.com/logos/nhl/svg/PHI_light.svg": {
+    fullName: "Philadelphia Flyers",
+    primaryColor: "#fc4c02",
+    secondaryColor: "#010101",
+  },
+
   // Quebec Nordiques
   "https://assets.nhle.com/logos/nhl/svg/QUE_19791980-19941995_light.svg": {
     fullName: "Quebec Nordiques",
