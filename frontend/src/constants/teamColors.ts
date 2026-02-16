@@ -1279,4 +1279,13 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#00205b",
     secondaryColor: "#ffffff",
   },
+
+  // Toronto Arenas
+  "https://assets.nhle.com/logos/nhl/svg/TAN_19171918-19181919_light.svg": {
+    fullName: "Toronto Arenas",
+    startYear: 1917,
+    endYear: 1919,
+    primaryColor: "#003087",
+    secondaryColor: "#ffffff",
+  },
 };
