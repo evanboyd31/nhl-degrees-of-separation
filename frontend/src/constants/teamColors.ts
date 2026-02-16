@@ -1240,4 +1240,13 @@ export const TEAM_COLORS: Record<string, TeamPeriod> = {
     primaryColor: "#006ac6",
     secondaryColor: "#ffb81c",
   },
+
+  // St. Louis Eagles
+  "https://assets.nhle.com/logos/nhl/svg/SLE_19341935_light.svg": {
+    fullName: "St. Louis Eagles",
+    startYear: 1934,
+    endYear: 1935,
+    primaryColor: "#c8102e",
+    secondaryColor: "#ffffff",
+  },
 };
