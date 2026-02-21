@@ -47,7 +47,9 @@ Note that a depth constraint of at most 30 nodes is used to prevent long-running
 
 ### Limitations
 
-A key limitation of the tool is that connections are formed based on rosters, and not NHL games themselves. For instance, two players can have played for the same team in the same year, but never have played together. For instance, Mikko Ratanen and Logan Stankoven both played for the 2024-2025 Carolina Hurricanes, but never played together, as Ratenan was traded to the Dallas Stars in exchange for Stankoven.
+A key limitation of the tool is that connections are formed based on rosters, and not NHL games themselves. For instance, two players can have played for the same team in the same year, but never have played together. For instance, Mikko Rantanen and Logan Stankoven both played for the 2024-2025 Carolina Hurricanes, but never played together, as Rantanen was traded to the Dallas Stars in exchange for Stankoven. See below:
+
+<img width="1920" height="970" alt="Screenshot from 2026-02-20 22-23-15" src="https://github.com/user-attachments/assets/de3fe908-3d63-4e9d-98e2-49fa0a2ae1fd" />
 
 ## Technologies Used
 
