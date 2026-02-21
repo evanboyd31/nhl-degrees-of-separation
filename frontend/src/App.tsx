@@ -51,7 +51,8 @@ const App = () => {
           <ShortestPathGraph pathData={shortestPath} />
         ) : (
           <div className="help-text">
-            Search for two players from the dropdowns to find the shortest path
+            Discover how any two NHL players are connected through teammates.
+            Search for two players to begin.
           </div>
         )}
       </main>
