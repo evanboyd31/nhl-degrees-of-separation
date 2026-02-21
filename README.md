@@ -25,6 +25,28 @@ The Neo4j node labels are the following:
   - `(Player)-[:PLAYED_FOR]->(TeamSeason)`: Connects a player to a specific roster (e.g., `(Nick Suzuki)-[:PLAYED_FOR]->(2025-2026 Montreal Canadiens)`)
   - `(TeamSeason)-[:SEASON_FOR]->(Team)`: Connects a team's season to the parent franchise (e.g., `(2025-2026 Montreal Canadiens)-[:SEASON_FOR]->(Montreal Canadiens)`)
 
+### Path Finding Algorithm
+
+The path finding algorithm leverages Neo4j's builtin `shortestPath` function, which implements a Breadth-First Search (BFS) to guarantee the shortest path between two players.
+
+Players are not linked directly to each other as this would create an extremely dense and memory inefficient graph; they are connected through intermediary `TeamSeason` nodes, which encapsulate rosters. A path between two follows the pattern:
+
+```
+(Player_A)-[:PLAYED_FOR]->(TeamSeason_1)<-[:PLAYED_FOR]-(Player_B)-[:PLAYED_FOR]->...
+```
+
+The backend executes a query of the form to find the degrees of separation:
+
+```
+MATCH (Player_A:Player {id: $id1}), (Player_N:Player {id: $id2})
+MATCH path = shortestPath((p1)-[:PLAYED_FOR*..30]-(p2))
+RETURN path
+```
+
+Note that a depth constraint of at most 30 nodes is used to prevent long-running queries, as most NHL players are separated by less than 6 degrees.
+
+### Limitations
+
 ## Technologies Used
 
 <p align="center"> 
