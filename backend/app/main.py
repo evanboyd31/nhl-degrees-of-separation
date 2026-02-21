@@ -10,7 +10,7 @@ app = FastAPI(title="NHL Degrees of Separation")
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://nhl-degrees-of-separation-frontend.onrender.com/"
+    "https://nhl-degrees-of-separation-frontend.onrender.com"
 ]
 
 app.add_middleware(
