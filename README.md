@@ -10,6 +10,21 @@ Every era of the NHL is distinct, but every player is connected. Inspired by Way
 
 The NHL Degrees of Separation web application can be viewed [here](https://nhl-degrees-of-separation-frontend.onrender.com/).
 
+## Design
+
+### Data Model & Schema
+
+The Neo4j node labels are the following:
+
+- Nodes:
+  - `Player`: Represents a player that has played in the NHL (e.g., Nick Suzuki).
+  - `TeamSeason`: Represents a team (or roster) in a specific year (e.g., the 2025-2026 Montreal Canadiens)
+  - `Team`: An NHL franchise (e.g., the Montreal Canadiens)
+
+- Relationships:
+  - `(Player)-[:PLAYED_FOR]->(TeamSeason)`: Connects a player to a specific roster (e.g., `(Nick Suzuki)-[:PLAYED_FOR]->(2025-2026 Montreal Canadiens)`)
+  - `(TeamSeason)-[:SEASON_FOR]->(Team)`: Connects a team's season to the parent franchise (e.g., `(2025-2026 Montreal Canadiens)-[:SEASON_FOR]->(Montreal Canadiens)`)
+
 ## Technologies Used
 
 <p align="center"> 
