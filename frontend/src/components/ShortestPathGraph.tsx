@@ -180,6 +180,15 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
             );
           });
         }}
+        nodePointerAreaPaint={(node: any, color, ctx) => {
+          const size = node.type == "team" ? 24 : 18;
+          const hitBoxPadding = 10;
+
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, size + hitBoxPadding, 0, 2 * Math.PI, false);
+          ctx.fill();
+        }}
       />
     </div>
   );
