@@ -91,7 +91,7 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
       <ForceGraph2D
         ref={forceRef}
         graphData={graphData}
-        backgroundColor="#1a1a1a"
+        backgroundColor="#242424"
         linkColor={(link: any) => link.color}
         linkDirectionalParticleColor={(link: any) => link.particleColor}
         linkWidth={3}
@@ -143,26 +143,26 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
             ctx.arc(
               node.x,
               node.y,
-              size + 2 / globalScale,
+              size + 5 / globalScale,
               0,
               2 * Math.PI,
               false,
             );
-            ctx.lineWidth = 3 / globalScale;
+            ctx.lineWidth = 5 / globalScale;
             ctx.strokeStyle = node.primaryColor;
             ctx.stroke();
 
             ctx.beginPath();
             ctx.arc(node.x, node.y, size, 0, 2 * Math.PI, false);
-            ctx.lineWidth = 2 / globalScale;
+            ctx.lineWidth = 5 / globalScale;
             ctx.strokeStyle = node.secondaryColor;
             ctx.stroke();
           } else {
             // single border for players
             ctx.beginPath();
             ctx.arc(node.x, node.y, size, 0, 2 * Math.PI, false);
-            ctx.lineWidth = 2 / globalScale;
-            ctx.strokeStyle = "#888";
+            ctx.lineWidth = 5 / globalScale;
+            ctx.strokeStyle = "#ffffff";
             ctx.stroke();
           }
 
