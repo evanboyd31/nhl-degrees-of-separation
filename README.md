@@ -18,3 +18,7 @@ The NHL Degrees of Separation web application can be viewed [here](https://nhl-d
   <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/4/neo4j-scjhzfu70ksd2paadypqr.png/neo4j-do4n8gc78dqpmorqrg1qt8.png?_a=DATAiZAAZAA0" alt="Neo4j Logo" width="100" style="margin: 0 15px;"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker Logo" width="100" style="margin: 0 15px;"/> 
 </p>
+
+## License
+
+All rights reserved. The code and content of this repository cannot be used, modified, or distributed without explicit permission from the author.
