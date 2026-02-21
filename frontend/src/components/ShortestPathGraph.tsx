@@ -9,6 +9,7 @@ interface PathGraphProps {
 
 const TEAM_NODE_SIZE = 24;
 const PLAYER_NODE_SIZE = 18;
+const HIT_BOX_PADDING = 10;
 
 const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
   const forceRef = useRef<ForceGraphMethods<any, any> | undefined>(undefined);
@@ -185,11 +186,16 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
         }}
         nodePointerAreaPaint={(node: any, color, ctx) => {
           const size = node.type == "team" ? TEAM_NODE_SIZE : PLAYER_NODE_SIZE;
-          const hitBoxPadding = 10;
-
           ctx.fillStyle = color;
           ctx.beginPath();
-          ctx.arc(node.x, node.y, size + hitBoxPadding, 0, 2 * Math.PI, false);
+          ctx.arc(
+            node.x,
+            node.y,
+            size + HIT_BOX_PADDING,
+            0,
+            2 * Math.PI,
+            false,
+          );
           ctx.fill();
         }}
       />
