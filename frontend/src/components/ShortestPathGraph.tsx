@@ -7,6 +7,9 @@ interface PathGraphProps {
   pathData: any[];
 }
 
+const TEAM_NODE_SIZE = 24;
+const PLAYER_NODE_SIZE = 18;
+
 const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
   const forceRef = useRef<ForceGraphMethods<any, any> | undefined>(undefined);
 
@@ -101,7 +104,7 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
         d3AlphaDecay={0.05}
         nodeCanvasObject={(node: any, ctx, globalScale) => {
           // make the team node bigger as the logos tend to be bigger images and do not scale well
-          const size = node.type === "team" ? 24 : 18;
+          const size = node.type === "team" ? TEAM_NODE_SIZE : PLAYER_NODE_SIZE;
           const fontSize = 13 / globalScale;
 
           ctx.save();
@@ -181,7 +184,7 @@ const ShortestPathGraph: React.FC<PathGraphProps> = ({ pathData }) => {
           });
         }}
         nodePointerAreaPaint={(node: any, color, ctx) => {
-          const size = node.type == "team" ? 24 : 18;
+          const size = node.type == "team" ? TEAM_NODE_SIZE : PLAYER_NODE_SIZE;
           const hitBoxPadding = 10;
 
           ctx.fillStyle = color;
