@@ -1,5 +1,6 @@
 import { type Player } from "../types/nhl";
 import PlayerSearchBar from "./PlayerSearchBar";
+import RandomPlayersButton from "./RandomPlayersButton";
 import "./PlayerSearchHeader.css";
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
   onSelect1: (player: Player | null) => void;
   /** Callback function to update Player 2 from the first Autocomplete dropdown */
   onSelect2: (player: Player | null) => void;
+  onRandomClick: () => void;
 }
 
 /**
@@ -23,6 +25,7 @@ const PlayerSearchHeader: React.FC<Props> = ({
   label2,
   onSelect1,
   onSelect2,
+  onRandomClick,
 }) => {
   return (
     <header className="search-header">
@@ -32,6 +35,9 @@ const PlayerSearchHeader: React.FC<Props> = ({
       <div className="search-arrow">➔</div>
       <div className="search-container">
         <PlayerSearchBar label={label2} onSelect={onSelect2} />
+      </div>
+      <div className="random-players">
+        <RandomPlayersButton onClick={onRandomClick} />
       </div>
     </header>
   );
