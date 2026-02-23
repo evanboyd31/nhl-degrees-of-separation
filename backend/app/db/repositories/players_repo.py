@@ -51,3 +51,24 @@ def run_get_shortest_path_between_two_players(session: Session, player_1_id: int
                        player_2_id=player_2_id)
 
   return [record.data() for record in result]
+
+
+def run_get_random_player_ids(session: Session):
+  """
+  The run_get_random_player_ids executes a query to find two random player IDs
+  
+  :param session: Neo4j DB session
+  :type session: Session
+  """
+
+  random_player_ids_query = """
+  MATCH (p:Player)
+  WITH p, rand() AS random
+  ORDER BY random
+  LIMIT 2
+  RETURN p.id AS id
+  """
+
+  result = session.run(random_player_ids_query)
+
+  return [record.data() for record in result]
