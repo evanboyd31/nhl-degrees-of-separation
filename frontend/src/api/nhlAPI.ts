@@ -9,11 +9,11 @@ const API_URL = import.meta.env.VITE_BASE_API_URL;
  * @returns a Promise that resolves to an array of Players, or an empty array if no players match the string or an error occurs
  */
 export const getPlayersByName = async (
-  searchString: string
+  searchString: string,
 ): Promise<Player[]> => {
   try {
     const response = await axios.get(
-      `${API_URL}players/search/?search_string=${searchString.toLowerCase()}`
+      `${API_URL}players/search/?search_string=${searchString.toLowerCase()}`,
     );
     return response.data.results || [];
   } catch (error) {
@@ -30,12 +30,27 @@ export const getPlayersByName = async (
  */
 export const getShortestPathBetweenTwoPlayers = async (
   player1Id: Number,
-  player2Id: Number
+  player2Id: Number,
 ) => {
   try {
     const response = await axios.get(
-      `${API_URL}players/shortest-path/?player_1_id=${player1Id}&player_2_id=${player2Id}`
+      `${API_URL}players/shortest-path/?player_1_id=${player1Id}&player_2_id=${player2Id}`,
     );
+
+    return response.data?.results?.path || [];
+  } catch (error) {
+    return [];
+  }
+};
+
+/**
+ * The getShortestPathBetweenTwoRandomPlayers function will return the shortest path connecting
+ * two randomly selected NHL players and the teams that they have played for
+ * @returns an array representing the shortest Player - TeamSeason - Player - TeamSeason ... - Player path
+ */
+export const getShortestPathBetweenTwoRandomPlayers = async () => {
+  try {
+    const response = await axios.get(`${API_URL}players/random-shortest-path/`);
 
     return response.data?.results?.path || [];
   } catch (error) {
