@@ -1,5 +1,5 @@
 from neo4j import Session
-from app.db.repositories.players_repo import run_get_players_by_search_string, run_get_shortest_path_between_two_players
+from app.db.repositories.players_repo import run_get_players_by_search_string, run_get_shortest_path_between_two_players, run_get_random_player_ids
 
 def get_player_by_search_string(session: Session, search_string: str):
   """
@@ -52,3 +52,24 @@ def get_shortest_path(session: Session, player_1_id: int, player_2_id: int):
     response.append(node)
 
   return {"results": {"hops": hops, "path": response}}
+
+def get_random_shortest_path(session: Session):
+  """
+  The get_random_shortest_path service function randomly
+  selects two NHL players and calls the repository to find the
+  shortest path between two NHL players, and return the results in JSON format
+  
+  :param session: Neo4j Database session
+  :type session: Session
+  """
+
+  random_player_results = run_get_random_player_ids(session=session)
+
+  print(random_player_results)
+  
+  player_1_id = random_player_results[0].get("id")
+  player_2_id = random_player_results[1].get("id")
+
+  return get_shortest_path(session=session, 
+                           player_1_id=player_1_id, 
+                           player_2_id=player_2_id)
