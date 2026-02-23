@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import PlayerSearchHeader from "./components/PlayerSearchHeader";
 import ShortestPathGraph from "./components/ShortestPathGraph";
-import { getShortestPathBetweenTwoPlayers } from "./api/nhlAPI";
+import {
+  getShortestPathBetweenTwoPlayers,
+  getShortestPathBetweenTwoRandomPlayers,
+} from "./api/nhlAPI";
 import { CircularProgress } from "@mui/material";
 import { type Player } from "./types/nhl";
 import "./styles/global.css";
@@ -36,6 +39,14 @@ const App = () => {
     getShortestPath();
   }, [player1, player2]);
 
+  const onRandomClick = async () => {
+    setLoadingPath(true);
+    const randomPlayerPathResponse =
+      await getShortestPathBetweenTwoRandomPlayers();
+    setShortestPath(randomPlayerPathResponse);
+    setLoadingPath(false);
+  };
+
   return (
     <div>
       <PlayerSearchHeader
@@ -43,6 +54,7 @@ const App = () => {
         label2="Player 2 (Enter to Search)"
         onSelect1={setPlayer1}
         onSelect2={setPlayer2}
+        onRandomClick={onRandomClick}
       />
 
       <main className="main-content">
